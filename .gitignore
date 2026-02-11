@@ -1,0 +1,110 @@
+# ========================================
+# .gitignore - MichelDouglas.dev
+# Arquivos e pastas a serem ignorados no Git
+# ========================================
+
+# ========== SISTEMA OPERACIONAL ==========
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ========== EDITORES / IDEs ==========
+# VSCode
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ / WebStorm
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ========== NODE / NPM ==========
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ========== LOGS ==========
+logs/
+*.log
+
+# ========== ARQUIVOS TEMPORÁRIOS ==========
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# ========== BACKUPS ==========
+*.bak
+*.backup
+*-backup.*
+
+# ========== ASSETS GRANDES (Opcional) ==========
+# Descomente se não quiser versionar vídeos grandes
+# assets/videos/*.mp4
+# assets/videos/*.webm
+
+# ========== BUILDS / DIST ==========
+dist/
+build/
+*.min.js
+*.min.css
+
+# ========== AMBIENTE ==========
+.env
+.env.local
+.env.*.local
+
+# ========== TESTES ==========
+coverage/
+.nyc_output/
+
+# ========== DOCUMENTAÇÃO GERADA ==========
+docs/generated/
+
+# ========== OUTROS ==========
+.htaccess
+robots.txt
+sitemap.xml
+
+# ========== ESPECÍFICO DO PROJETO ==========
+# Adicione aqui arquivos específicos que não devem ser versionados
+assets/images/portfolio/*-original.*
+docs/drafts/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Arquivos pessoais
+referencias/
+rascunhos/
+*.psd
+*.ai
+*.fig
