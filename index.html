@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Michel Douglas - Designer & Full-Stack Developer | Cametá, PA</title>
+    <meta name="description"
+        content="Designer e Desenvolvedor Full-Stack especializado em UX/UI, desenvolvimento web e transformação digital. Baseado em Cametá, Pará, atendendo todo o Brasil.">
+    <meta name="keywords"
+        content="designer, desenvolvedor, full-stack, ux ui, cametá, pará, web design, desenvolvimento">
+    <meta name="author" content="Michel Douglas">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micheldouglas.dev/">
+    <meta property="og:title" content="Michel Douglas - Designer & Full-Stack Developer">
+    <meta property="og:description" content="Transformando ideias em experiências digitais memoráveis">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://micheldouglas.dev/">
+    <meta property="twitter:title" content="Michel Douglas - Designer & Full-Stack Developer">
+    <meta property="twitter:description" content="Transformando ideias em experiências digitais memoráveis">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+    <link rel="alternate icon" href="assets/images/logo/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <!-- Logo -->
+            <div class="header-brand">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev">
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="header-nav">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#processo" class="nav-link">Processo</a>
+                <a href="#portfolio" class="nav-link">Portfólio</a>
+                <a href="#contato" class="nav-link">Contato</a>
+
+
+                <a href="#contato" class="btn-cta">
+                    <i class="ri-message-3-line icon-sm"></i>
+                    Entre em contato
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação"
+                aria-expanded="false">
+                <i class="ri-menu-line icon-open"></i>
+                <i class="ri-close-line icon-close"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="inicio">
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/videos/hero-background.webm" type="video/webm">
+            <source src="assets/videos/hero-background.mp4" type="video/mp4">
+        </video>
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line-1">
+                    <span class="gradient-text">✦</span>Transformando <span class="break-mobile">ideias em</span>
+                </span>
+                <span class="title-line-2">
+                    experiências
+                    <span class="typewriter-container">
+                        <span class="typewriter-word gradient-text" id="typewriterWord">visuais</span>
+                        <span class="typewriter-cursor">|</span>
+                    </span>
+                </span>
+            </h1>
+
+            <p>Sou Michel Douglas, Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code,
+                trazendo o equilíbrio perfeito entre domínio técnico e visão criativa.</p>
+
+
+            <!-- Clientes/Parceiros -->
+            <div class="hero-clients">
+                <span class="clients-label">Clientes que inovam comigo</span>
+                <div class="clients-logos">
+                    <img src="assets/images/clients/quitinete-logo.svg" alt="Quitinete App">
+                    <img src="assets/images/clients/semed-logo.svg" alt="SEMED Cametá">
+                    <img src="assets/images/clients/ifpa-logo.svg" alt="IFPA">
+                    <img src="assets/images/clients/muta-logo.svg" alt="Mutã">
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#sobre" class="scroll-indicator">
+            <i class="ri-scroll-to-bottom-line icon-lg"></i>
+        </a>
+    </section>
+
+    <!-- ==================== SOBRE SECTION ==================== -->
+    <section class="about-section" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Texto -->
+                <div class="about-content">
+                    <span class="section-tag">Quem está por trás do código</span>
+                    <h2 class="section-title">Técnica, criatividade e visão estratégica.</h2>
+                    <div class="about-text">
+                        <p>Formado em <strong>Análise e Desenvolvimento de Sistemas,</strong> encontrei meu diferencial
+                            na
+                            intersecção com o Design. Com especializações em <strong>Inteligência Artificial e
+                                Machine Learning, Computação Forense e Perícia Digital e Design de Produtos Digitais
+                                UX/UI</strong> crio o equilíbrio perfeito entre técnica e criatividade para moldar
+                            experiências digitais impactantes.</p>
+                    </div>
+
+                    <!-- Skills Tags -->
+                    <div class="skills-keywords">
+                        <ul class="keywords-track">
+                            <li>FlutterFlow <span>*</span></li>
+                            <li>WordPress <span>*</span></li>
+                            <li>Supabase <span>*</span></li>
+                            <li>Firebase <span>*</span></li>
+                            <li>Photoshop <span>*</span></li>
+                            <li>Illustrator <span>*</span></li>
+                            <li>Figma <span>*</span></li>
+                            <li>Aseprite <span>*</span></li>
+                            <li>CorelDraw <span>*</span></li>
+                            <li>Ionic <span>*</span></li>
+                            <li>Unity <span>*</span></li>
+                            <li>Trello <span>*</span></li>
+                            <li>Notion <span>*</span></li>
+                            <li>N8N <span>*</span></li>
+                            <li>Canva <span>*</span></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="about-visual">
+                    <div class="about-image-wrapper">
+                        <img src="assets/images/about/bg-code.png" class="bg-code" alt="Background Code">
+
+                        <!-- Floating Tags -->
+
+                        <img src="assets/images/cta/floating-tags/tag-designer.png" class="float-el el-tag-right"
+                            alt="Designer Roxo">
+
+                        <img src="assets/images/cta/floating-tags/tag-developer.png" class="float-el el-tag-left"
+                            alt="Designer Laranja">
+
+
+                        <img src="assets/images/about/floating-tags/tag-ux.png" class="float-tag tag-1" alt="UX Design">
+                        <img src="assets/images/about/floating-tags/tag-dev.png" class="float-tag tag-2"
+                            alt="Desenvolvimento">
+                        <img src="assets/images/about/floating-tags/tag-rocket.png" class="float-tag tag-3"
+                            alt="Lançamento">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVIÇOS SECTION ==================== -->
+    <section class="services-section" id="servicos">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-tag">O que eu faço</span>
+                <h2 class="section-title">Serviços especializados</h2>
+                <p class="section-description">Transformo suas ideias em realidade! Explore os serviços especializados
+                    que ofereço:
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Serviço 1: Desenvolvimento Web -->
+                <div class="service-card">
+
+                    <div class="service-image-box">
+                        <img src="https://nanoincub.com.br/wp-content/uploads/2024/08/sinait.svg"
+                            alt="Sites & Plataformas Digitais">
+                    </div>
+
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="ri-window-line icon-lg"></i>
+                        </div>
+                        <span>CRIAMOS EXPERIÊNCIAS DIGITAIS</span>
+                        <h3>Sites & Plataformas Digitais</h3>
+                        <p><strong>Projetando presenças online atraentes e funcionais para sua marca.</strong>
+                            Desenvolvemos sites responsivos e plataformas digitais que combinam design
+                            excepcional com performance otimizada. Utilizando tecnologias modernas como
+                            React e WordPress customizado, criamos experiências que engajam usuários e
+                            convertem visitantes em clientes. Desde landing pages de alta conversão até
+                            e-commerces completos, cada projeto é pensado estrategicamente para
+                            representar sua marca de forma autêntica e profissional no ambiente digital.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Desenvolvimento mobile -->
+                <div class="service-card featured">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="ri-terminal-box-line icon-lg"></i>
+                        </div>
+                        <span>TRANSFORMAMOS IDEIAS EM APPS</span>
+                        <h3>Aplicativo Mobile</h3>
+                        <p><strong>Transformando ideias em aplicativos poderosos e intuitivos para web e
+                                mobile.</strong>
+                            Especializados em desenvolvimento cross-platform com Flutter e FlutterFlow, criamos
+                            aplicativos que funcionam perfeitamente em iOS e Android. Nossa abordagem combina
+                            prototipagem ágil com desenvolvimento eficiente, utilizando metodologias Low-Code para
+                            acelerar o time-to-market sem comprometer a qualidade. Integramos APIs robustas,
+                            implementamos sistemas de autenticação seguros e criamos interfaces que proporcionam
+                            experiências de usuário memoráveis e funcionais.</p>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="assets/images/service/mobile/cover.png" alt="Aplicativo Mobile">
+                    </div>
+
+                </div>
+
+                <!-- Serviço 3: Consultoria Digital -->
+                <div class="service-card">
+
+                    <div class="service-image-box">
+                        <img src="assets/images/service/design/cover.png" alt=" Identidade Visual & Branding">
+                    </div>
+
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="ri-pencil-ruler-2-line icon-lg"></i>
+                        </div>
+                        <span>CRIAMOS MARCAS MEMORÁVEIS</span>
+                        <h3>Identidade Visual & Branding</h3>
+                        <p><strong>Marcas visualmente impactantes e identidades visuais únicas que comunicam sua
+                                mensagem de forma memorável.</strong>
+                            Desenvolvemos sistemas de identidade visual completos, desde a concepção do logo até a
+                            aplicação em múltiplos touchpoints. Utilizando metodologias de design thinking, criamos
+                            marcas que ressoam emocionalmente com seu público-alvo. Nosso processo inclui pesquisa de
+                            mercado, definição de arquétipos de marca, criação de paletas cromáticas estratégicas e
+                            desenvolvimento de guidelines visuais que garantem consistência em todos os pontos de
+                            contato da sua marca. </p>
+                    </div>
+                </div>
+                <!-- Serviço 2: Desenvolvimento Web -->
+                <div class="service-card featured">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="ri-window-line icon-lg"></i>
+                        </div>
+                        <span>OTIMIZAMOS PROCESSOS DIGITAIS</span>
+                        <h3>Consultoria Digital & Automações</h3>
+                        <p><strong>Guiando a transformação digital e otimizando processos para o sucesso do seu
+                                negócio.</strong>
+                            Analisamos seus workflows atuais e implementamos soluções de automação que aumentam
+                            produtividade e reduzem custos operacionais. Nossa experiência em gestão de equipes digitais
+                            e integração de sistemas nos permite identificar gargalos e propor soluções eficientes.
+                            Trabalhamos com ferramentas Low-Code/No-Code, integração de APIs, automação de social media
+                            e implementação de dashboards de monitoramento que fornecem insights estratégicos para
+                            tomada de decisão.</p>
+                    </div>
+                    <div class="service-image-box">
+                        <img src="assets/images/service/auto/cover.png" alt="Plataformas Digitais">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS SECTION ==================== -->
+    <section class="process-section" id="processo">
+        <div class="container">
+
+            <!-- Header Grid -->
+            <div class="process-grid">
+                <div class="process-content">
+                    <span class="section-tag">Como Trabalho</span>
+                    <h2 class="process-title">Descoberta, validação e desenvolvimento.</h2>
+                    <div class="process-description">
+                        <p>Com foco em resultados e agilidade na execução, desenvolvemos projetos seguindo uma
+                            metodologia testada que prioriza eficiência e qualidade excepcional. Trabalhando de forma
+                            estratégica e colaborativa, cada projeto é conduzido através de um processo estruturado que
+                            garante alinhamento total com seus objetivos.
+                        </p>
+                        <p> E fazemos isso dividindo nosso trabalho em basicamente 3 fases:</p>
+                    </div>
+                </div>
+
+                <div class="process-visual">
+                    <img src="assets/images/about/bg-code.png" alt="Código de fundo" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Steps Cards -->
+            <div class="process-steps">
+                <article class="process-card">
+                    <div class="card-icon">
+                        <i class="ri-compass-line"></i>
+                    </div>
+                    <span class="card-number">Fase 1</span>
+                    <h3 class="card-title">Estratégia & Descoberta</h3>
+                    <p class="card-text">Todo projeto parte de uma ideia clara que surge a partir da identificação de
+                        uma necessidade real. Nesta fase é necessário definir briefing completo, persona do usuário,
+                        arquitetura da informação, proposta de valor e cronograma navegável.</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="card-icon">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                    <span class="card-number">Fase 2</span>
+                    <h3 class="card-title">Design & Prototipagem</h3>
+                    <p class="card-text">Com base na estratégia definida, damos forma ao projeto através de design
+                        systems coesos. Selecionamos a stack tecnológica ideal seguindo as melhores práticas de UX/UI
+                        Design, desenvolvimento ágil e prototipagem interativa.</p>
+                </article>
+
+                <article class="process-card">
+                    <div class="card-icon">
+                        <i class="ri-rocket-2-line"></i>
+                    </div>
+                    <span class="card-number">Fase 3</span>
+                    <h3 class="card-title">Desenvolvimento & Lançamento</h3>
+                    <p class="card-text">Após validar uma versão funcional do projeto, é hora de permitir que usuários
+                        o utilizem. Executamos as estratégias de desenvolvimento
+                        através metodologias ágeis, testes rigorosos e deploy otimizado.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== PORTFOLIO SECTION ==================== -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-swiper-container">
+            <div class="swiper portfolio-swiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1: SEMED -->
+                    <div class="swiper-slide" data-project="semed">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Branding & Social Media</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Rebranding digital da Educação municipal de Cametá</h2>
+                                    <p class="portfolio-description">
+                                        Liderança na transformação da comunicação visual da SEMED, resultando em
+                                        aumento de 300% no engajamento e criação de identidade institucional moderna.
+                                    </p>
+                                    <a href="#" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-info">
+                                <img src="assets/images/portfolio/semed/cover.png" alt="Projeto SEMED Cametá"
+                                    loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Quitinete -->
+                    <div class="swiper-slide" data-project="quitinete">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">UX/UI & Desenvolvimento</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Plataforma regional de aluguel -
+                                        Quitinete</h2>
+                                    <p class="portfolio-description">
+                                        O aplicativo Quitinete é uma plataforma dedicada à gestão de aluguel de
+                                        quitinetes, oferecendo funcionalidades tanto para locadores quanto para
+                                        locatários.
+                                    </p>
+                                    <a href="#" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-primary">
+                                <img src="assets/images/portfolio/quitinete/cover.png" alt="Quitinete App"
+                                    loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: e-Cesta -->
+                    <div class="swiper-slide" data-project="e-cesta">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">UX/UI & Desenvolvimento</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Marketplace para agircultura - e-Cesta</h2>
+                                    <p class="portfolio-description">
+                                        O aplicativo e-Cesta é uma plataforma dedicada a auxiliar pequenos agricultores
+                                        rurais na venda de seus produtos, permitindo que qualquer agricultor crie uma
+                                        lojinha no aplicativo e realize suas vendas.
+                                    </p>
+                                    <a href="#" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-success">
+                                <img src="assets/images/portfolio/e-cesta/cover.png" alt="e-Cesta App" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Projeto 3 (Placeholder) -->
+                    <div class="swiper-slide" data-project="next">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Web Design</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Vamos criar algo incrível juntos?</h2>
+                                    <p class="portfolio-description">
+                                        Este espaço está reservado para o seu próximo projeto. Entre em contato
+                                        e vamos transformar sua ideia em realidade digital.
+                                    </p>
+                                    <a href="#contato" class="portfolio-btn">
+                                        <span>Iniciar conversa</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-teal">
+                                <img src="assets/images/portfolio/outros/cover.jpg" alt="Seu próximo projeto"
+                                    loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controles -->
+                <div class="portfolio-controls">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
+        <div class="container">
+
+            <div class="floating-elements">
+                <img src="assets/images/cta/floating-tags/tag-designer.png" class="float-el el-tag-right"
+                    alt="Designer Roxo">
+
+                <img src="assets/images/cta/floating-tags/tag-developer.png" class="float-el el-tag-left"
+                    alt="Designer Vermelho">
+
+                <img src="assets/images/cta/floating-tags/tag-rocket.png" class="float-el el-tag-left-top"
+                    alt="Designer Vermelho">
+            </div>
+
+            <div class="cta-content">
+                <span class="cta-label">DESENVOLVA SEU PROJETO COMIGO</span>
+                <h2 class="cta-title">Crie um projeto personalizado que conecte sua visão com o mundo digital.</h2>
+                <p class="cta-text"> Todas as ideias têm potencial para se transformar em algo especial. Com uma pitada
+                    de criatividade e um toque técnico, transformo ideias em experiências visuais e funcionais.</p>
+
+                <a href="#" class="contact-btn">
+                    <span>Iniciar projeto</span>
+                    <i class="ri-arrow-right-up-line icon-sm"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ==================== CONTATO SECTION ==================== -->
+    <section class="contact-section" id="contato">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Texto -->
+                <div class="contact-content">
+                    <span class="section-tag">Vamos conversar</span>
+                    <h2 class="contact-title">Quer descobrir como posso te ajudar a fazer sua ideia acontecer?</h2>
+                    <p class="contact-description">
+                        Se você busca um profissional com expertise em Design UX/UI e Desenvolvimento Full-Stack, que
+                        entende tanto de criatividade quanto de código, vamos conversar sobre suas necessidades.
+                    </p>
+
+                    <a href="#" class="contact-btn">
+                        <i class="ri-message-3-line icon-sm"></i>
+                        <span>Entre em contato</span>
+                    </a>
+                </div>
+                <div class="contact-visual">
+                    <div class="img-container">
+                        <img src="assets/images/cta/contact/img-contato.webp" alt="Contato" class="main-contact-img">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll to Top Button -->
+            <a href="#inicio" class="scroll-top-btn" aria-label="Voltar ao topo">
+                <i class="ri-arrow-up-s-line icon-lg"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo + Descrição -->
+                <div class="footer-brand">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev"
+                        class="footer-logo">
+                    <p>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio
+                        perfeito entre domínio técnico e visão criativa.</p>
+                </div>
+                <!-- Email & Localização-->
+
+                <div class="footer-col contact-col">
+                    <h4>Atendimento</h4>
+
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-mail-send-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="mailto:contato@micheldouglas.dev">contato@micheldouglas.dev</a>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-map-pin-5-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="https://www.google.com/maps/place/Nano+Incub/@-23.0982372,-47.1870114,17z/data=!4m6!3m5!1s0x94c8b4a90382c23d:0xfacecc8e2ca9f591!8m2!3d-23.0984839!4d-47.1859814!16s%2Fg%2F11bbrnlctl?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank">
+                            TV. Brasil, 30 - Marambaia, Cametá - PA,
+                            68400-000
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Redes Sociais -->
+                <div class="footer-social">
+                    <h4>Me acompanhe</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/micheldouglas" target="_blank" aria-label="GitHub">
+                            <i class="ri-github-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/micheldouglas" target="_blank" aria-label="LinkedIn">
+                            <i class="ri-linkedin-box-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://instagram.com/micheldouglas" target="_blank" aria-label="Instagram">
+                            <i class="ri-instagram-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://instagram.com/micheldouglas" target="_blank" aria-label="Facebook">
+                            <i class="ri-facebook-circle-fill icon-md icon-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev">
+                </div>
+                <div class="copyright">
+                    <p>© 2026 – <strong>MichelDouglas.dev</strong> Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/typewriter.js"></script>
+
+</body>
+
+</html>
