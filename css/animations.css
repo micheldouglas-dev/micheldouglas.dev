@@ -1,0 +1,348 @@
+/* ========================================
+   ANIMATIONS.CSS - MichelDouglas.dev
+   Animações e transições do site
+   ======================================== */
+
+/* ========== KEYFRAMES ========== */
+
+/* Animação de Bounce (Scroll Indicator) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Animação de Float (Tags Flutuantes) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(-1deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+/* Animação de Float Especial para Tag Central */
+@keyframes floatCenter {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+/* Aplicando ao elemento central específico */
+.float-tag.tag-2 {
+    animation: floatCenter 4s ease-in-out infinite;
+}
+
+/* Animação de Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação de Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de Slide In Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação de Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação de Pulse (Efeito de Destaque) */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Animação de Shimmer (Loading Effect) */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Animação de Gradient Shift */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ========== CLASSES DE ANIMAÇÃO ========== */
+
+/* Fade In Up (Padrão para elementos que entram na tela) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para animações em sequência */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+
+/* ========== ANIMAÇÕES ESPECÍFICAS DE SEÇÕES ========== */
+
+/* Hero Animations */
+.hero-tag {
+    animation: fadeIn 0.8s ease 0.2s both;
+}
+
+.hero h1 {
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero p {
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-cta {
+    animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.hero-clients {
+    animation: fadeInUp 0.8s ease 1s both;
+}
+
+.scroll-indicator {
+    animation: fadeIn 0.8s ease 1.2s both, bounce 2s infinite 2s;
+}
+
+/* Portfolio Item Reveal */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Skill Tags Animation */
+.skill-tag {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 0.4s ease forwards;
+}
+
+.skill-tag:nth-child(1) { animation-delay: 0.1s; }
+.skill-tag:nth-child(2) { animation-delay: 0.15s; }
+.skill-tag:nth-child(3) { animation-delay: 0.2s; }
+.skill-tag:nth-child(4) { animation-delay: 0.25s; }
+.skill-tag:nth-child(5) { animation-delay: 0.3s; }
+.skill-tag:nth-child(6) { animation-delay: 0.35s; }
+.skill-tag:nth-child(7) { animation-delay: 0.4s; }
+.skill-tag:nth-child(8) { animation-delay: 0.45s; }
+
+/* Form Focus Animations */
+.form-group input:focus,
+.form-group textarea:focus {
+    animation: pulse 0.3s ease;
+}
+
+/* Button Hover Effects */
+.btn-primary,
+.btn-secondary,
+.btn-cta,
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before,
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before,
+.btn-cta:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Loading State */
+.loading {
+    position: relative;
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Gradient Text Animation (opcional) */
+.gradient-text-animated {
+    background: linear-gradient(
+        90deg,
+        var(--primary-accent),
+        var(--secondary-accent),
+        var(--primary-accent)
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Scroll Progress Bar (opcional) */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 9999;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s ease;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+
+/* Reduzir animações para usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .scroll-indicator {
+        animation: none;
+    }
+    
+    .float-tag {
+        animation: none;
+    }
+}
+
+/* Hardware Acceleration para animações suaves */
+.hero-video,
+.float-tag,
+.portfolio-item,
+.service-card,
+.btn-primary,
+.btn-cta {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Remove will-change após animação */
+.animated {
+    will-change: auto;
+}
