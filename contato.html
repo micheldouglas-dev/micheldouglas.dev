@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Contato - Michel Douglas | Designer & Full-Stack Developer</title>
+    <meta name="description"
+        content="Entre em contato e vamos transformar sua ideia em realidade digital. Preencha o formulário e receba uma proposta personalizada.">
+    <meta name="keywords" content="contato, orçamento, proposta, designer, desenvolvedor, cametá, pará">
+    <meta name="author" content="Michel Douglas">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micheldouglas.dev/contato">
+    <meta property="og:title" content="Contato - Michel Douglas">
+    <meta property="og:description" content="Entre em contato e vamos transformar sua ideia em realidade digital">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://micheldouglas.dev/contato">
+    <meta property="twitter:title" content="Contato - Michel Douglas">
+    <meta property="twitter:description" content="Entre em contato e vamos transformar sua ideia em realidade digital">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+    <link rel="alternate icon" href="assets/images/logo/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/contato.css"> <!-- CSS específico do formulário -->
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <!-- Logo -->
+            <div class="header-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev">
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="header-nav">
+                <a href="index.html#inicio" class="nav-link">Início</a>
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#servicos" class="nav-link">Serviços</a>
+                <a href="index.html#processo" class="nav-link">Processo</a>
+                <a href="index.html#portfolio" class="nav-link">Portfólio</a>
+
+                <a href="index.html" class="btn-cta">
+                    <i class="ri-tent-line icon-sm"></i>
+                    Voltar ao início
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação"
+                aria-expanded="false">
+                <i class="ri-menu-line icon-open"></i>
+                <i class="ri-close-line icon-close"></i>
+            </button>
+        </div>
+    </header>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="contact-hero" id="contato">
+        <div class="container">
+            <div class="contact-content">
+                <span class="contact-label">DESENVOLVA SEU PROJETO COMIGO</span>
+                <h2 class="contact-title">Como posso ajudar?</h2>
+                <p class="contact-text">Descubra como posso transformar suas ideias em realidade! Entre em contato e
+                    explore o que podemos criar:</p>
+
+            </div>
+        </div>
+    </section>
+    <!-- ==================== FORMULÁRIO SECTION ==================== -->
+    <section class="form-section">
+        <div class="container">
+            <form class="form-contact" id="formContact" novalidate>
+
+                <!-- BLOCO 1: DADOS DE CONTATO -->
+                <div class="form-block">
+                    <h2 class="form-block-title">Dados de contato</h2>
+
+                    <!-- Nome completo -->
+                    <div class="form-field form-field-full">
+                        <label for="inputNome" class="form-label required">Nome completo</label>
+                        <input type="text" id="inputNome" name="nome" class="form-input" placeholder="Seu nome completo"
+                            required>
+                    </div>
+                    <!-- Email e WhatsApp (lado a lado) -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="inputEmail" class="form-label required">E-mail</label>
+                            <input type="email" id="inputEmail" name="email" class="form-input"
+                                placeholder="exemplo@email.com.br" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="inputWhatsapp" class="form-label required">Celular / WhatsApp</label>
+                            <input type="tel" id="inputWhatsapp" name="whatsapp" class="form-input"
+                                placeholder="(DDD) 9 9999-9999" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOCO 2: DADOS DE PROJETO -->
+                <div class="form-block">
+                    <h2 class="form-block-title">Dados de projeto</h2>
+                    <p class="form-block-description required">Selecione abaixo qual ou quais projetos deseja
+                        desenvolver</p>
+                    <div class="form-services-error" id="servicesError">Campo de preenchimento obrigatório.</div>
+
+                    <div class="form-services">
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service1" name="servicos[]" value="Plataforma digital / SaaS">
+                            <label for="service1">
+                                <strong>Plataforma digital / SaaS</strong>
+                                <p>Um SaaS abrange uma aplicação de software e um serviço que se são totais baseados em
+                                    nuvem.</p>
+                            </label>
+                        </div>
+
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service2" name="servicos[]" value="Aplicativo mobile">
+                            <label for="service2">
+                                <strong>Aplicativo mobile</strong>
+                                <p>Soluções em aplicativo mobile para os principais sistemas: iOS e Android, com 100% de
+                                    responsividade.</p>
+                            </label>
+                        </div>
+
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service3" name="servicos[]" value="Squad de Design (UX/UI)">
+                            <label for="service3">
+                                <strong>Squad de Design (UX/UI)</strong>
+                                <p>Alocação de uma equipe base de design para o seu negócio.</p>
+                            </label>
+                        </div>
+
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service4" name="servicos[]" value="Software personalizado">
+                            <label for="service4">
+                                <strong>Software personalizado</strong>
+                                <p>Oferece que permita a produção de diferentes arquiteturas e serviços para internet.
+                                </p>
+                            </label>
+                        </div>
+
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service5" name="servicos[]" value="Documentação de projeto">
+                            <label for="service5">
+                                <strong>Documentação de projeto</strong>
+                                <p>Fases de descobrimento para definição e entendimento claro do escopo do projeto.</p>
+                            </label>
+                        </div>
+
+                        <div class="form-service-item">
+                            <input type="checkbox" id="service6" name="servicos[]" value="Squad de Automação / IA">
+                            <label for="service6">
+                                <strong>Squad de Automação / IA</strong>
+                                <p>Alocação de uma equipe para automação e IA para o seu negócio.</p>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <!-- Descrição do projeto -->
+                    <div class="form-field form-field-full">
+                        <label for="inputDescricao" class="form-label required">Descreva um pouco sobre o
+                            projeto</label>
+                        <textarea id="inputDescricao" name="descricao" class="form-textarea" rows="5"
+                            placeholder="Digite aqui com mais detalhes o que você está buscando ou alguma observação, se necessário."
+                            required></textarea>
+                    </div>
+                </div>
+
+                <!-- BLOCO 3: FINALIZAÇÃO -->
+                <div class="form-block">
+                    <h2 class="form-block-title">E pra finalizar...</h2>
+
+                    <!-- Como conheceu -->
+                    <div class="form-field form-field-full">
+                        <label for="selectOrigem" class="form-label required">Como você me conheceu?</label>
+                        <select id="selectOrigem" name="origem" class="form-select" required>
+                            <option value="">Selecione</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Indicação">Indicação</option>
+                            <option value="Google">Google</option>
+                            <option value="Evento">Evento</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <!-- CAPTCHA -->
+                    <div class="form-field form-field-captcha">
+                        <label for="inputCaptcha" class="form-label required">
+                            Prove que você não é um robô
+                        </label>
+                        <p class="form-captcha-question">10 + 10</p>
+                        <input type="number" id="inputCaptcha" name="captcha" class="form-input" required>
+                    </div>
+
+                    <!-- Container Flex: Termos + Botão -->
+                    <div class="form-footer">
+                        <div class="form-checkbox-simple">
+                            <input type="checkbox" id="checkTermos" name="termos" class="form-checkbox-input" required>
+                            <label for="checkTermos" class="form-checkbox-label">
+                                Li e aceito os <a href="#" target="_blank">Termos de Uso</a> e
+                                <a href="#" target="_blank">Política de Privacidade</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="form-btn-submit">
+                            <span class="btn-icon">
+                                <i class="ri-message-3-line"></i>
+                            </span>
+                            <span class="btn-text">Enviar detalhes do projeto</span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Scroll to Top Button -->
+            <a href="#contato" class="scroll-top-btn" aria-label="Voltar ao topo">
+                <i class="ri-arrow-up-s-line icon-lg"></i>
+            </a>
+            <div class="footer-content">
+                <!-- Logo + Descrição -->
+                <div class="footer-brand">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev"
+                        class="footer-logo">
+                    <p>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio
+                        perfeito entre domínio técnico e visão criativa.</p>
+                </div>
+                <!-- Email & Localização-->
+
+                <div class="footer-col contact-col">
+                    <h4>Atendimento</h4>
+
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-mail-send-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="mailto:contato@micheldouglas.dev">contato@micheldouglas.dev</a>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-whatsapp-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="https://wa.me/5591993706923" target="_blank">(91) 99370-6923</a>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-map-pin-5-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="https://maps.app.goo.gl/MFLq5aW8mKk6zvJTA" target="_blank">
+                            TV. Brasil, 30 - Marambaia, Cametá - PA,
+                            68400-000
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Início</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="index.html#portfolio">Portfólio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="footer-social">
+                    <h4>Me acompanhe</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/micheldouglas-dev" target="_blank" data-network="github"
+                            aria-label="GitHub">
+                            <i class="ri-github-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/micheldouglasdev/" target="_blank" data-network="linkedin"
+                            aria-label="LinkedIn">
+                            <i class="ri-linkedin-box-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://instagram.com/micheldouglas.dev" target="_blank" data-network="instagram"
+                            aria-label="Instagram">
+                            <i class="ri-instagram-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://facebook.com/micheldouglas" target="_blank" data-network="facebook"
+                            aria-label="Facebook">
+                            <i class="ri-facebook-circle-fill icon-md icon-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev">
+                </div>
+                <div class="copyright">
+                    <p>© <span class="copyright-year">2026</span> – <strong>MichelDouglas.dev</strong> Todos os direitos
+                        reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/contato.js"></script> <!-- JS específico do formulário -->
+
+</body>
+
+</html>

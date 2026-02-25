@@ -1,6 +1,5 @@
 /* ========================================
    STYLE.CSS - MichelDouglas.dev
-   Estilos principais do portfólio
    ======================================== */
 
 /* ========== RESET & BASE ========== */
@@ -219,8 +218,10 @@ button {
 
 /* CTA Button */
 .btn-cta {
+    width: 180px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-2);
     padding: var(--space-3) var(--space-4);
     margin-left: var(--space-4);
@@ -380,7 +381,6 @@ button {
     display: inline-block;
     color: var(--bg-white);
     animation: blink 0.7s infinite;
-    font-weight: var(--font-bold);
     font-weight: 700;
     margin-left: -16px;
     /* ← MUDE AQUI */
@@ -426,7 +426,7 @@ button {
 }
 
 .clients-label {
-    font-size: var(--text-md);
+    font-size: var(--text-base);
     color: var(--text-gray);
     font-weight: var(--font-bold);
     letter-spacing: var(--tracking-wide);
@@ -1007,7 +1007,6 @@ button {
     max-width: 115%;
     max-height: 115%;
     object-fit: contain;
-    border-radius: var(--radius-lg);
     transition: transform var(--transition-slow);
 }
 
@@ -1030,7 +1029,9 @@ button {
 }
 
 [data-project="next"] .portfolio-visual img {
-    transform: translateX(-60px);
+    width: 112%;
+    height: 112%;
+    transform: translateX(10px);
 }
 
 /* Hover states */
@@ -1047,7 +1048,7 @@ button {
 }
 
 [data-project="next"]:hover .portfolio-visual img {
-    transform: translateX(-60px) scale(1.03);
+    transform: translateX(10px) scale(1.03);
 }
 
 .portfolio-visual.bg-primary {
@@ -1066,8 +1067,8 @@ button {
     background: var(--accent-purple);
 }
 
-.portfolio-visual.bg-teal {
-    background: var(--accent-teal);
+.portfolio-visual.bg-dark {
+    background: var(--bg-primary);
 }
 
 .portfolio-visual.bg-info {
@@ -1079,12 +1080,17 @@ button {
     position: absolute;
     bottom: var(--space-10);
     left: 50%;
-    transform: translateX(-55%);
+    /* ← Volta para centralizar */
+    transform: translateX(-50%);
+    /* ← Centraliza perfeitamente */
     width: 100%;
-    max-width: var(--container-width, 1200px);
+    max-width: var(--container-2xl);
+    padding: 0 var(--space-10);
+    /* ← Mantém padding */
     z-index: 10;
     display: flex;
     justify-content: flex-start;
+    /* ← Alinha à esquerda DENTRO do container */
     pointer-events: none;
 }
 
@@ -1114,20 +1120,20 @@ button {
     border-radius: 16px;
 }
 
-/* ========== CTA SECTION ========== */
-.cta-section {
-    padding: 120px 0;
-    background-color: #ffffff;
+/* ========== CONTACT SECTION ========== */
+.contact-section {
+    padding: var(--space-36) 0;
+    background-color: var(--bg-white);
     position: relative;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
-.cta-section .container {
+.contact-section .container {
     position: relative;
 }
 
 /* --- CONTEÚDO CENTRAL --- */
-.cta-content {
+.contact-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -1138,38 +1144,8 @@ button {
     align-items: center;
 }
 
-/* --- BOTÃO ESTILO CASE (Adaptado para Fundo Branco) --- */
-.cta-btn-style {
-    /* Herda o layout do .case-btn original, mas forçamos cores escuras */
-    /* Estado Normal */
-    color: #15161C !important;
-    /* Texto Preto */
-    border: 1px solid #333 !important;
-    /* Borda Escura */
-    background: transparent !important;
-    transition: all 0.3s ease;
-}
-
-.cta-btn-style:hover {
-    background-color: var(--primary-accent) !important;
-    /* Fundo VERMELHO Sólido */
-    border-color: var(--primary-accent) !important;
-    color: #ffffff !important;
-    /* Texto BRANCO */
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(241, 19, 72, 0.3);
-    /* Sombra vermelha */
-}
-
-/* IMPORTANTE: Mudar a cor da seta para branco no hover */
-.cta-btn-style:hover svg g path,
-.cta-btn-style:hover svg path {
-    stroke: #ffffff !important;
-    /* Seta vira branca */
-}
-
 /* --- TEXTOS --- */
-.cta-label {
+.contact-label {
     display: block;
     color: #F11348;
     font-size: 0.85rem;
@@ -1180,7 +1156,7 @@ button {
     margin-top: 10px;
 }
 
-.cta-title {
+.contact-title {
     font-size: 3rem;
     font-weight: 700;
     color: #15161C;
@@ -1188,12 +1164,48 @@ button {
     margin-bottom: 24px;
 }
 
-.cta-text {
+.contact-text {
     font-size: 1.1rem;
     color: #8D8F9C;
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 700px;
+}
+
+/* Botão */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    width: fit-content;
+
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-dark);
+    text-decoration: none;
+
+    background: transparent;
+    border: 2px solid var(--bg-primary);
+    border-radius: var(--radius-lg);
+
+    transition: all var(--transition-base);
+}
+
+.contact-btn:hover {
+    border-color: var(--primary-accent);
+    background: rgba(241, 19, 72, 0.1);
+    transform: translateX(4px);
+}
+
+.contact-btn i {
+    font-size: 1.25rem;
+    transition: transform var(--transition-base);
+    color: var(--primary-accent);
+}
+
+.contact-btn:hover i {
+    transform: translate(2px, -2px);
 }
 
 /* --- IMAGENS FLUTUANTES --- */
@@ -1275,78 +1287,26 @@ button {
     }
 }
 
-/* ========== CONTACT SECTION ========== */
-.contact-section {
-    padding: var(--space-16) 0;
-    background: var(--bg-white);
+/* ========== FOOTER ========== */
+.footer {
     position: relative;
+    background: var(--bg-primary);
+    color: var(--text-light);
+    padding: 0 0 var(--space-6);
+    /* Remove padding-top */
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-20);
-    align-items: start;
+.footer .container {
+    position: relative;
+    padding-top: var(--space-20);
+    /* Padding migra para container */
 }
 
-.contact-title {
-    font-size: var(--text-4xl);
-    font-weight: var(--font-bold);
-    color: var(--text-dark);
-    line-height: var(--leading-tight);
-    margin-bottom: var(--space-6);
-}
-
-.contact-description {
-    font-size: var(--text-lg);
-    color: var(--text-gray-dark);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-10);
-}
-
-/* Botão */
-.contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-4) var(--space-6);
-    width: fit-content;
-
-    font-size: var(--text-base);
-    font-weight: var(--font-semibold);
-    color: var(--text-dark);
-    text-decoration: none;
-
-    background: transparent;
-    border: 2px solid var(--bg-primary);
-    border-radius: var(--radius-lg);
-
-    transition: all var(--transition-base);
-}
-
-.contact-btn:hover {
-    border-color: var(--primary-accent);
-    background: rgba(241, 19, 72, 0.1);
-    transform: translateX(4px);
-}
-
-.contact-btn i {
-    font-size: 1.25rem;
-    transition: transform var(--transition-base);
-    color: var(--primary-accent);
-}
-
-.contact-btn:hover i {
-    transform: translate(2px, -2px);
-}
-
-
-
-/* Scroll to Top */
 .scroll-top-btn {
     position: absolute;
-    bottom: -25px;
-    right: var(--space-32);
+    top: -25px;
+    /* Exatamente metade da altura do botão */
+    right: 50px;
     width: 50px;
     height: 50px;
     background: var(--gradient-primary);
@@ -1365,11 +1325,10 @@ button {
     box-shadow: var(--shadow-xl);
 }
 
-/* ========== FOOTER ========== */
-.footer {
-    background: var(--bg-primary);
-    color: var(--text-light);
-    padding: var(--space-20) 0 var(--space-6);
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        right: var(--space-6);
+    }
 }
 
 .footer-content {
@@ -1384,7 +1343,7 @@ button {
     color: var(--text-light);
     line-height: var(--leading-relaxed);
     margin-top: var(--space-6);
-    max-width: auto;
+    max-width: 100%;
 }
 
 .footer-logo {
@@ -1475,8 +1434,27 @@ button {
 }
 
 .social-links a:hover {
-    opacity: 0.8;
-    transform: translateY(-3px);
+    opacity: 1;
+    transform: translateY(-2px) scale(1.15);
+}
+
+.social-links a[data-network="github"]:hover i {
+    color: #FFFFFF;
+}
+
+.social-links a[data-network="linkedin"]:hover i {
+    color: #2186eb;
+}
+
+.social-links a[data-network="instagram"]:hover i {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 35%, #dc2743 50%, #cc2366 90%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-links a[data-network="facebook"]:hover i {
+    color: #1877F2;
 }
 
 .footer-bottom {

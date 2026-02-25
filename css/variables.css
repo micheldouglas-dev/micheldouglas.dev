@@ -18,19 +18,19 @@
     /* Cores Secundárias */
     --secondary-accent: #ff6978;
     /* Orange 500 - Criatividade */
-    --secondary-accent-light: #ff9fa6;
+    --secondary-accent-light: #FFE2E4;
     /* Orange 400 */
 
     /* Backgrounds */
     --bg-primary: #15161C;
-    /* Branco */
+    /* Fundo escuro */
     --bg-secondary: #1a1b22;
     /* backgroundComponent */
-    --bg-tertiary: #27272a;
+    --bg-tertiary: #e0e3e7;
     /* Tertiary Text */
     --bg-white: #FFFFFF;
     /* Fundo branco */
-    --bg-light: #f4f5f6;
+    --bg-light: #fcfcfc;
     /* Cinza claro */
 
     /* Cores de Texto */
@@ -39,7 +39,7 @@
     /* Slate 100 - Texto claro */
     --text-gray: #828491;
     /* Slate 400 - Texto secundário */
-    --text-gray-dark: #7A7A7A;
+    --text-gray-dark: #3b3d41;
     /* Slate 500 - Texto terciário */
     --text-white: #FFFFFF;
     /* Branco puro */
@@ -144,6 +144,7 @@
     /* 96px */
     --space-32: 8rem;
     /* 128px */
+    --space-36: 10rem;
 
     /* ========== LAYOUT ========== */
 

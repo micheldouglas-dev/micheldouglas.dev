@@ -90,6 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ========== SWIPER SCREENSHOTS (CASE STUDY) ==========
+    if (document.querySelector('.screenshots-swiper')) {
+        const screenshotsSwiper = new Swiper('.screenshots-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop: false,
+            speed: 600,
+            grabCursor: true,
+
+            pagination: {
+                el: '.screenshots-swiper-container .swiper-pagination', // ← SELETOR ESPECÍFICO!
+                clickable: true,
+                dynamicBullets: false,
+            },
+        });
+
+    }
     // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -141,6 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleMobileMenu();
         }
     });
+
+    // ========== ANO DINÂMICO NO FOOTER ==========
+    const copyrightYear = document.querySelector('.copyright-year');
+    if (copyrightYear) {
+        copyrightYear.textContent = new Date().getFullYear();
+    }
 
     // ========== SCROLL ANIMATIONS ==========
     const observerOptions = {
