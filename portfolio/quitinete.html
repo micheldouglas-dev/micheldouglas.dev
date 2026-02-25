@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Quitinete - Case Study | Michel Douglas</title>
+    <meta name="description"
+        content="Case study do app Quitinete: plataforma mobile para locação de imóveis estudantis com FlutterFlow e Firebase.">
+    <meta name="keywords"
+        content="quitinete, app mobile, flutterflow, firebase, case study, portfólio, design, desenvolvimento">
+    <meta name="author" content="Michel Douglas">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://micheldouglas.dev/portfolio/quitinete">
+    <meta property="og:title" content="Quitinete - Case Study">
+    <meta property="og:description"
+        content="Plataforma mobile para locação de imóveis estudantis com sistema de agendamento e filtros avançados.">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://micheldouglas.dev/portfolio/quitinete">
+    <meta property="twitter:title" content="Quitinete - Case Study">
+    <meta property="twitter:description"
+        content="Plataforma mobile para locação de imóveis estudantis com sistema de agendamento e filtros avançados.">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete-og.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/favicon.svg">
+    <link rel="alternate icon" href="../assets/images/logo/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/portfolio-case.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev">
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <a href="../index.html#inicio" class="nav-link">Início</a>
+                <a href="../index.html#sobre" class="nav-link">Sobre</a>
+                <a href="../index.html#servicos" class="nav-link">Serviços</a>
+                <a href="../portfolio.html" class="nav-link active">Portfólio</a>
+
+                <a href="../contato.html" class="btn-cta">
+                    <i class="ri-message-3-line icon-sm"></i>
+                    Entre em contato
+                </a>
+            </nav>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação"
+                aria-expanded="false">
+                <i class="ri-menu-line icon-open"></i>
+                <i class="ri-close-line icon-close"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== CASE HERO ==================== -->
+    <section class="case-hero">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Navegação de retorno">
+                <a href="../portfolio.html" aria-label="Voltar à página de portfólio">
+                    <i class="ri-arrow-left-line" aria-hidden="true"></i>
+                    Voltar ao portfólio
+                </a>
+            </nav>
+
+            <div class="case-hero-content">
+                <span class="section-label">Desenvolvimento de Aplicativos Mobile</span>
+                <h1 class="case-title">Quitinete</h1>
+                <p class="case-subtitle">Plataforma mobile para locação de imóveis estudantis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HERO IMAGE ==================== -->
+    <section class="case-hero-visual">
+        <div class="case-visual-wrapper">
+            <img src="../assets/images/portfolio/quitinete/quitinete-thumb.png" alt="Quitinete App Mockup">
+        </div>
+    </section>
+
+    <!-- ==================== SOBRE O PROJETO ==================== -->
+    <section class="case-section case-about">
+        <div class="container-narrow">
+
+            <div class="layout-grid">
+                <!-- COLUNA ESQUERDA: Informações do Projeto -->
+                <div class="layout-grid-left">
+                    <span class="section-label">Sobre o Projeto</span>
+                    <h2 class="section-title-large">Uma das plataformas de referência em locação de imóveis estudantis
+                        em Cametá</h2>
+
+                    <div class="section-content">
+                        <p>O Quitinete nasceu da necessidade real de estudantes universitários em Cametá que enfrentam
+                            dificuldades para encontrar moradia acessível e confiável. A plataforma conecta
+                            proprietários de
+                            quitinetes a estudantes através de uma interface mobile intuitiva, eliminando a necessidade
+                            de
+                            intermediários tradicionais.</p>
+                        <p><strong>Problema identificado:</strong> Inexistência de plataformas digitais focadas em
+                            locação
+                            estudantil nas cidades médias do Pará. Estudantes dependiam de grupos do WhatsApp,
+                            indicações
+                            informais e buscas presenciais — processos lentos e ineficientes.</p>
+
+                        <p><strong>Objetivo do projeto:</strong> Criar uma solução mobile-first que simplifique a busca
+                            por
+                            moradia estudantil, oferecendo filtros avançados, visualização em mapa, agendamento de
+                            visitas e
+                            comunicação direta entre proprietários e estudantes.</p>
+                    </div>
+
+                    <a href="#" class="link-with-icon">
+                        <i class="ri-external-link-line" aria-hidden="true"></i>
+                        Ver site do aplicativo
+                    </a>
+                </div>
+
+                <!-- COLUNA DIREITA: Grid de Desafios -->
+                <div class="layout-grid-right">
+                    <span class="section-label">Desafios Técnicos</span>
+
+                    <div class="challenges-mini-grid">
+                        <div class="challenge-mini-card">
+                            <i class="ri-map-pin-line" aria-hidden="true"></i>
+                            <h4>VISUALIZAÇÃO EM MAPA</h4>
+                            <p>Implementar sistema de clustering que agrupa imóveis próximos, garantindo performance
+                                mesmo com centenas de marcadores simultâneos.</p>
+                        </div>
+
+                        <div class="challenge-mini-card">
+                            <i class="ri-database-2-line" aria-hidden="true"></i>
+                            <h4>SINCRONIZAÇÃO DE DADOS</h4>
+                            <p>Resolver conflitos entre FlutterFlow e Supabase através de triggers customizados e
+                                gerenciamento de estado granular.
+
+                            </p>
+                        </div>
+
+                        <div class="challenge-mini-card">
+                            <i class="ri-filter-line" aria-hidden="true"></i>
+                            <h4>FILTROS AVANÇADOS</h4>
+                            <p>Criar sistema de filtragem com múltiplas camadas (localização, preço, comodidades) sem
+                                comprometer a velocidade de resposta.</p>
+                        </div>
+
+                        <div class="challenge-mini-card">
+                            <i class="ri-calendar-line" aria-hidden="true"></i>
+                            <h4>AGENDAMENTO INTELIGENTE</h4>
+                            <p>Desenvolver sistema de scheduling com notificações push, lembretes automáticos e
+                                sincronização de calendário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MOCKUP FULL-WIDTH ==================== -->
+    <section class="case-mockup-full">
+        <div class="container">
+            <img src="../assets/images/portfolio/quitinete/quitinete-thumb.png" alt="Quitinete - Interface Completa">
+        </div>
+    </section>
+
+    <!-- ==================== SOLUÇÃO ENTREGUE ==================== -->
+    <section class="case-section case-solution">
+        <div class="container-narrow">
+
+            <div class="solution-layout">
+                <!-- Coluna Esquerda: Título + Descrição -->
+                <div class="solution-intro">
+                    <span class="section-label">Solução Entregue</span>
+                    <h2 class="section-title-large">Plataforma mobile completa para locação estudantil com recursos
+                        avançados</h2>
+                    <p class="solution-description">Desenvolvi uma solução mobile-first que simplifica completamente o
+                        processo de busca por moradia estudantil, integrando tecnologias modernas para criar uma
+                        experiência fluida e eficiente.</p>
+
+                    <div class="solution-stat">
+                        <i class="ri-checkbox-circle-line" aria-hidden="true"></i>
+                        <span>+ DE 120 IMÓVEIS CADASTRADOS</span>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Cards de Funcionalidades -->
+                <div class="solution-features">
+                    <div class="solution-feature-card">
+                        <i class="ri-search-line" aria-hidden="true"></i>
+                        <h4>BUSCA INTELIGENTE</h4>
+                        <p>Sistema de filtros avançados por localização, preço e comodidades com resultados
+                            instantâneos.</p>
+                    </div>
+
+                    <div class="solution-feature-card">
+                        <i class="ri-map-pin-line" aria-hidden="true"></i>
+                        <h4>VISUALIZAÇÃO EM MAPA</h4>
+                        <p>Clustering automático de imóveis próximos para navegação espacial otimizada.</p>
+                    </div>
+
+                    <div class="solution-feature-card">
+                        <i class="ri-calendar-check-line" aria-hidden="true"></i>
+                        <h4>AGENDAMENTO</h4>
+                        <p>Sistema integrado com notificações push e lembretes para visitas agendadas.</p>
+                    </div>
+
+                    <div class="solution-feature-card">
+                        <i class="ri-chat-3-line" aria-hidden="true"></i>
+                        <h4>CHAT DIRETO</h4>
+                        <p>Comunicação em tempo real entre proprietários e estudantes pelo app.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECNOLOGIAS ==================== -->
+    <section class="case-section case-tech">
+        <div class="container-narrow">
+            <span class="section-label">Tecnologias Usadas no Projeto</span>
+            <h2 class="section-title-medium">Ferramentas que utilizo para dar vida às suas ideias. Explore as
+                tecnologias que impulsionam meu trabalho:</h2>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="ri-flutter-line tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">FlutterFlow</span>
+                </div>
+
+                <div class="tech-card">
+                    <i class="ri-supabase-line tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">Supabase</span>
+                </div>
+
+                <div class="tech-card">
+                    <i class="ri-figma-fill tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">Figma</span>
+                </div>
+
+                <div class="tech-card">
+                    <i class="ri-code-s-slash-line tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">FlutterFlow</span>
+                </div>
+
+                <div class="tech-card">
+                    <i class="ri-palette-line tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">Figma</span>
+                </div>
+
+                <div class="tech-card">
+                    <i class="ri-github-line tech-icon" aria-hidden="true"></i>
+                    <span class="tech-name">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SCREENSHOTS ==================== -->
+    <section class="case-screenshots-full">
+        <div class="container-narrow">
+            <span class="section-label">TELAS DO APLICATIVO</span>
+            <h2 class="section-title-medium">Navegue pelas principais funcionalidades</h2>
+        </div>
+
+        <div class="screenshots-swiper-container">
+            <div class="swiper screenshots-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../assets/images/portfolio/quitinete/screen-1.png" alt="Tela 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../assets/images/portfolio/quitinete/screen-2.jpg" alt="Tela 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../assets/images/portfolio/quitinete/screen-3.jpg" alt="Tela 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginação FORA do swiper, mas DENTRO do container -->
+            <div class="portfolio-controls">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="portfolio-final-cta">
+        <div class="cta-container">
+            <div class="cta-content">
+                <div class="cta-header">
+                    <span class="cta-label">PROJETO</span>
+                    <span class="cta-category">Web Design</span>
+                </div>
+
+                <div class="cta-body">
+                    <h2 class="cta-title">Vamos criar algo incrível juntos?</h2>
+                    <p class="cta-description">
+                        Este espaço está reservado para o seu próximo projeto. Entre em contato
+                        e vamos transformar sua ideia em realidade digital.
+                    </p>
+                    <a href="../contato.html" class="cta-button">
+                        <span>Iniciar conversa</span>
+                        <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-visual">
+                <img src="../assets/images/portfolio/outros/cover.webp" alt="Seu próximo projeto">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="scroll-top-btn" aria-label="Voltar ao topo">
+                <i class="ri-arrow-up-s-line icon-lg" aria-hidden="true"></i>
+            </a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev"
+                        class="footer-logo">
+                    <p>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio
+                        perfeito entre domínio técnico e visão criativa.</p>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h4>Atendimento</h4>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-mail-send-line icon-sm icon-primary" aria-hidden="true"></i>
+                        </div>
+                        <a href="mailto:contato@micheldouglas.dev">contato@micheldouglas.dev</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-whatsapp-line icon-sm icon-primary" aria-hidden="true"></i>
+                        </div>
+                        <a href="https://wa.me/5591993706923" target="_blank">( 91) 99370-6923</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-map-pin-5-line icon-sm icon-primary" aria-hidden="true"></i>
+                        </div>
+                        <a href="https://maps.app.goo.gl/MFLq5aW8mKk6zvJTA" target="_blank">
+                            TV. Brasil, 30 - Marambaia, Cametá - PA, 68400-000
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../index.html#inicio">Início</a></li>
+                        <li><a href="../index.html#sobre">Sobre</a></li>
+                        <li><a href="../index.html#servicos">Serviços</a></li>
+                        <li><a href="../portfolio.html">Portfólio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Me acompanhe</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/micheldouglas-dev" target="_blank" data-network="github"
+                            aria-label="GitHub">
+                            <i class="ri-github-fill icon-md icon-primary" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/micheldouglasdev/" target="_blank" data-network="linkedin"
+                            aria-label="LinkedIn">
+                            <i class="ri-linkedin-box-fill icon-md icon-primary" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com/micheldouglas.dev" target="_blank" data-network="instagram"
+                            aria-label="Instagram">
+                            <i class="ri-instagram-fill icon-md icon-primary" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://facebook.com/micheldouglasdev" target="_blank" data-network="facebook"
+                            aria-label="Facebook">
+                            <i class="ri-facebook-circle-fill icon-md icon-primary" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="../assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev">
+                </div>
+                <div class="copyright">
+                    <p>© <span class="copyright-year">2026</span> – <strong>MichelDouglas.dev</strong> Todos os
+                        direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script> <!-- ← CORRIGIDO! -->
+</body>
+
+</body>
+
+</html>

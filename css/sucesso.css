@@ -1,0 +1,102 @@
+/* ========================================
+   SUCESSO.CSS - MichelDouglas.dev
+   ======================================== */
+
+
+/* ========== SUCCESS HERO ========== */
+.success-hero {
+    background: var(--bg-primary);
+    padding: calc(var(--header-height) + var(--space-20)) 0 var(--space-20);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success-label {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--primary-accent);
+    margin-bottom: var(--space-4);
+}
+
+.success-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-white);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+}
+
+.success-text {
+    font-size: var(--text-base);
+    color: var(--text-gray);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-10);
+}
+
+.success-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+}
+
+
+/* CTA Button */
+.btn-success {
+    width: 190px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-white) !important;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-accent);
+    transition: all var(--transition-base);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-secondary);
+}
+
+/* ========== SUCCESS INFO ========== */
+.success-info {
+    padding: var(--space-36) 0;
+    background: var(--bg-white);
+    position: relative;
+    overflow-x: clip;
+}
+
+.success-info .container {
+    position: relative;
+}
+
+.success-info-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success-info h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    margin-bottom: var(--space-4);
+}
+
+.success-info p {
+    font-size: var(--text-base);
+    color: var(--text-gray-dark);
+    line-height: var(--leading-relaxed);
+}

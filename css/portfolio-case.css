@@ -1,0 +1,687 @@
+/* ========================================
+   PORTFOLIO-CASE.CSS - MichelDouglas.dev
+   Páginas de case study individuais
+   
+   ÍNDICE:
+   1. Hero & Breadcrumb
+   2. Hero Visual (imagem 50/50 preto/branco)
+   3. Layout Grid Unificado (Sobre + Desafios)
+   4. Mockup Full-Width
+   5. Solução Entregue (Grid com cards laterais)
+   6. Tecnologias
+   7. Slider de Screenshots
+   8. CTA Final
+   9. Responsivo
+   ======================================== */
+
+/* ========== 1. HERO & BREADCRUMB ========== */
+.case-hero {
+    background: var(--bg-primary);
+    padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-8);
+}
+
+.case-hero-content {
+    max-width: 900px;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--primary-accent);
+    margin-bottom: var(--space-6);
+}
+
+.case-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-white);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+}
+
+.case-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-light);
+    margin-bottom: var(--space-10);
+}
+
+/* ========== 2. HERO VISUAL (Divisão 50/50 Preto/Branco) ========== */
+.case-hero-visual {
+    background: var(--bg-primary);
+    padding: var(--space-12) 0;
+    position: relative;
+    height: 575px;
+    display: flex;
+    align-items: center;
+}
+
+.case-visual-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-10);
+    position: relative;
+    width: 100%;
+}
+
+.case-visual-wrapper img {
+    width: 100%;
+    height: 100%;
+    max-height: 575px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.case-hero-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 50%;
+    background: var(--bg-white);
+    z-index: 1;
+}
+
+/* ========== 3. LAYOUT GRID UNIFICADO (Sobre + Desafios) ========== */
+.case-section {
+    padding: var(--space-20) 0;
+    background: var(--bg-white);
+}
+
+.case-section.case-about {
+    padding-top: var(--space-20);
+    background: var(--bg-white);
+}
+
+.container-narrow {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-10);
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+    gap: var(--space-16);
+    align-items: start;
+}
+
+/* Coluna Esquerda */
+.layout-grid-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.layout-grid-left .section-label {
+    margin-bottom: var(--space-4);
+}
+
+/* Coluna Direita */
+.layout-grid-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.section-title-large {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    line-height: var(--leading-tight);
+    margin: 0;
+}
+
+.section-content {
+    font-size: var(--text-lg);
+    color: var(--text-gray-dark);
+    line-height: var(--leading-relaxed);
+}
+
+.section-content p {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+}
+
+.link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: transform var(--transition-base);
+}
+
+.link-with-icon:hover {
+    transform: translateX(4px);
+}
+
+.link-with-icon i {
+    font-size: 1.25rem;
+}
+
+/* Cards de Desafios - Coluna Única com Ícone + Título + Descrição */
+.challenges-mini-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.challenge-mini-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.challenge-mini-card i {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+}
+
+.challenge-mini-card h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.challenge-mini-card p {
+    font-size: var(--text-sm);
+    color: var(--text-gray);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+/* ========== 4. MOCKUP FULL-WIDTH ========== */
+.case-mockup-full {
+    background: var(--bg-white);
+    padding: var(--space-20) 0;
+}
+
+.case-mockup-full .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-10);
+    height: 575px;
+    overflow: hidden;
+}
+
+.case-mockup-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========== 5. SOLUÇÃO ENTREGUE (Grid com cards laterais) ========== */
+.case-solution {
+    background: var(--bg-white);
+    padding: var(--space-24) 0;
+}
+
+.solution-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+}
+
+/* Coluna Esquerda */
+.solution-intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.solution-description {
+    font-size: var(--text-lg);
+    color: var(--text-gray-dark);
+    line-height: var(--leading-relaxed);
+    margin-top: var(--space-4);
+}
+
+.solution-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+.solution-stat i {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+}
+
+.solution-stat span {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-dark);
+}
+
+/* Coluna Direita - Grid 2x2 */
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8) var(--space-6);
+}
+
+.solution-feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Cards da coluna 2 (pares) ficam mais altos */
+.solution-feature-card:nth-child(2),
+.solution-feature-card:nth-child(4) {
+    padding-top: var(--space-12);
+}
+
+.solution-feature-card i {
+    font-size: 1.75rem;
+    color: var(--primary-accent);
+}
+
+.solution-feature-card h4 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.solution-feature-card p {
+    font-size: var(--text-sm);
+    color: var(--text-gray);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+/* ========== 6. GRID DE TECNOLOGIAS ========== */
+.case-tech {
+    background: var(--bg-white);
+}
+
+.case-tech .section-label,
+.case-tech .section-title-medium {
+    text-align: left;
+    /* Alinhado à esquerda */
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Alinhado à esquerda */
+    gap: var(--space-3);
+    padding: var(--space-4);
+    padding-bottom: var(--space-10);
+    /* 16px */
+    background: var(--bg-white);
+    border: 2px solid var(--bg-tertiary);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+}
+
+.tech-icon {
+    font-size: 2rem;
+    /* Ícone menor */
+    color: var(--primary-accent);
+}
+
+.tech-name {
+    font-size: var(--text-sm);
+    /* Texto menor */
+    font-weight: var(--font-semibold);
+    color: var(--text-dark);
+}
+
+/* ========== 7. SLIDER DE SCREENSHOTS ========== */
+.case-screenshots-full {
+    background: var(--secondary-accent-light);
+    padding: var(--space-20) 0;
+    overflow: hidden;
+}
+
+.case-screenshots-full .container-narrow {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.screenshots-swiper-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-10);
+    position: relative;
+}
+
+.screenshots-swiper .swiper-slide {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 575px;
+    width: 100%;
+}
+
+.screenshots-swiper .swiper-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Paginação Centralizada - RESETA TUDO */
+.case-screenshots-full .portfolio-controls {
+    all: unset;
+    /* ← RESETA TODOS OS ESTILOS */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: var(--space-8);
+    padding-bottom: var(--space-4);
+}
+
+.case-screenshots-full .swiper-pagination {
+    position: static !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.case-screenshots-full .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(241, 19, 72, 0.3);
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.case-screenshots-full .swiper-pagination-bullet-active {
+    background: var(--primary-accent);
+    width: 32px;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .screenshots-swiper .swiper-slide {
+        height: 400px;
+    }
+}
+
+/* ========== 8. CTA FINAL (Seção de Conversão) ========== */
+.portfolio-final-cta {
+    background: var(--bg-light);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.cta-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    min-height: 650px;
+    padding: 0 var(--space-10);
+    gap: 0;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+    padding-right: var(--space-10);
+    background: var(--bg-light);
+}
+
+.cta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cta-label {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--primary-accent);
+}
+
+.cta-category {
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--primary-accent);
+}
+
+.cta-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.cta-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    line-height: var(--leading-tight);
+    margin: 0;
+}
+
+.cta-description {
+    font-size: var(--text-lg);
+    color: var(--text-gray);
+    line-height: var(--leading-relaxed);
+    max-width: 540px;
+    margin: 0;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    width: fit-content;
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--text-dark);
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid var(--secondary-accent-light);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.cta-button:hover {
+    border-color: var(--primary-accent);
+    background: rgba(241, 19, 72, 0.1);
+    transform: translateX(4px);
+}
+
+.cta-button i {
+    font-size: 1.25rem;
+    transition: transform var(--transition-base);
+    color: var(--primary-accent);
+}
+
+.cta-button:hover i {
+    transform: translate(2px, -2px);
+}
+
+.cta-visual {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    background: var(--bg-light);
+    padding-left: var(--space-10);
+}
+
+.cta-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -100vw;
+    bottom: 0;
+    background: var(--bg-light);
+    z-index: 0;
+}
+
+.cta-visual img {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    max-width: 115%;
+    max-height: 115%;
+    object-fit: contain;
+    transition: transform var(--transition-slow);
+}
+
+.cta-visual img:hover {
+    transform: scale(1.03);
+}
+
+/* ========== 9. RESPONSIVO ========== */
+
+@media (max-width: 968px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .challenges-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-features {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-feature-card:nth-child(2),
+    .solution-feature-card:nth-child(4) {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-hero {
+        padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-8);
+    }
+
+    .case-title {
+        font-size: var(--text-3xl);
+    }
+
+    .case-subtitle {
+        font-size: var(--text-lg);
+    }
+
+    .case-hero-visual {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .case-visual-wrapper img {
+        max-height: 400px;
+    }
+
+    .case-hero-visual::after {
+        height: 30%;
+    }
+
+    .case-section {
+        padding: var(--space-12) 0;
+    }
+
+    .section-title-large {
+        font-size: var(--text-2xl);
+    }
+
+    .case-mockup-full .container {
+        height: 400px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .screenshots-slider {
+        padding: 0 var(--space-6);
+    }
+
+    .screenshots-slider img {
+        max-width: 90vw;
+    }
+
+    .cta-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: var(--space-8);
+    }
+
+    .cta-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cta-header {
+        justify-content: center;
+        gap: var(--space-4);
+    }
+
+    .cta-visual {
+        min-height: 400px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-title {
+        font-size: var(--text-2xl);
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}

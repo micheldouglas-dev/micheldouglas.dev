@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Portfólio - Michel Douglas | Projetos em Design & Desenvolvimento</title>
+    <meta name="description"
+        content="Explore meus projetos em UX/UI Design e Desenvolvimento Full-Stack. Cases reais de plataformas digitais, aplicativos mobile e soluções low-code.">
+    <meta name="keywords"
+        content="portfólio, projetos, design, desenvolvimento, ux/ui, flutterflow, firebase, aplicativos">
+    <meta name="author" content="Michel Douglas">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micheldouglas.dev/portfolio">
+    <meta property="og:title" content="Portfólio - Michel Douglas">
+    <meta property="og:description"
+        content="Cases reais de design e desenvolvimento. Plataformas digitais, apps mobile e soluções inovadoras.">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/og-portfolio.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://micheldouglas.dev/portfolio">
+    <meta property="twitter:title" content="Portfólio - Michel Douglas">
+    <meta property="twitter:description"
+        content="Cases reais de design e desenvolvimento. Plataformas digitais, apps mobile e soluções inovadoras.">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/og-portfolio.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
+    <link rel="alternate icon" href="assets/images/logo/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <!-- Logo -->
+            <div class="header-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev">
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="header-nav">
+                <a href="index.html#inicio" class="nav-link">Início</a>
+                <a href="index.html#sobre" class="nav-link">Sobre</a>
+                <a href="index.html#servicos" class="nav-link">Serviços</a>
+                <a href="index.html#processo" class="nav-link">Processo</a>
+                <a href="portfolio.html" class="nav-link active">Portfólio</a>
+
+                <a href="contato.html" class="btn-cta">
+                    <i class="ri-message-3-line icon-sm"></i>
+                    Entre em contato
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação"
+                aria-expanded="false">
+                <i class="ri-menu-line icon-open"></i>
+                <i class="ri-close-line icon-close"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <span class="section-tag">MEUS PROJETOS</span>
+                <h1 class="portfolio-hero-title">Transformando ideias em experiências digitais</h1>
+                <p class="portfolio-hero-text">Explore cases reais de design e desenvolvimento, desde plataformas SaaS
+                    até aplicativos mobile, criados com atenção aos detalhes e foco na experiência do usuário.</p>
+
+                <!-- Filtros -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="ri-apps-line"></i>
+                        <span>Todos</span>
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i class="ri-window-line"></i>
+                        <span>Plataformas Web</span>
+                    </button>
+                    <button class="filter-btn" data-filter="mobile">
+                        <i class="ri-smartphone-line"></i>
+                        <span>Apps Mobile</span>
+                    </button>
+                    <button class="filter-btn" data-filter="branding">
+                        <i class="ri-brush-line"></i>
+                        <span>Branding</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO GRID ==================== -->
+    <section class="portfolio-grid-section">
+        <div class="container">
+            <div class="portfolio-grid">
+
+                <!-- Projeto 1: Quitinete -->
+                <article class="project-card" data-category="mobile">
+                    <a href="portfolio/quitinete.html" class="project-link">
+                        <div class="project-image">
+                            <img src="assets/images/portfolio/quitinete/quitinete-thumb.png" alt="App Quitinete">
+                            <div class="project-overlay">
+                                <i class="ri-eye-line"></i>
+                                <span>Ver projeto</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">FlutterFlow</span>
+                            </div>
+                            <h3 class="project-title">Quitinete</h3>
+                            <p class="project-description">O aplicativo Quitinete é uma plataforma dedicada à gestão de
+                                aluguel de quitinetes, oferecendo funcionalidades tanto para locadores quanto para
+                                locatários.</p>
+                            <div class="project-meta">
+                                <span class="meta-item"><i class="ri-time-line"></i> 2025</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Projeto 2: Guardiões da Floresta -->
+                <article class="project-card" data-category="web">
+                    <a href="portfolio/guardioes-floresta.html" class="project-link">
+                        <div class="project-image">
+                            <img src="assets/images/portfolio/guardioes-thumb.jpg" alt="Guardiões da Floresta">
+                            <div class="project-overlay">
+                                <i class="ri-eye-line"></i>
+                                <span>Ver projeto</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Web</span>
+                                <span class="tag">Game Design</span>
+                            </div>
+                            <h3 class="project-title">Guardiões da Floresta</h3>
+                            <p class="project-description">Jogo digital roguelike deck-builder com elementos da cultura
+                                amazônica e mecânicas inovadoras.</p>
+                            <div class="project-meta">
+                                <span class="meta-item"><i class="ri-time-line"></i> 2026</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Projeto 3: SEMED Rebrand -->
+                <article class="project-card" data-category="branding">
+                    <a href="portfolio/semed-rebrand.html" class="project-link">
+                        <div class="project-image">
+                            <img src="assets/images/portfolio/semed-thumb.jpg" alt="SEMED Rebranding">
+                            <div class="project-overlay">
+                                <i class="ri-eye-line"></i>
+                                <span>Ver projeto</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Branding</span>
+                                <span class="tag">Social Media</span>
+                            </div>
+                            <h3 class="project-title">SEMED Rebranding</h3>
+                            <p class="project-description">Rebranding completo da identidade visual e estratégia de
+                                comunicação da Secretaria Municipal de Educação.</p>
+                            <div class="project-meta">
+                                <span class="meta-item"><i class="ri-time-line"></i> 2024</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Adicione mais projetos aqui -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <section class="portfolio-final-cta">
+        <div class="cta-container">
+            <div class="cta-content">
+                <div class="cta-header">
+                    <span class="cta-label">PROJETO</span>
+                    <span class="cta-category">Web Design</span>
+                </div>
+
+                <div class="cta-body">
+                    <h2 class="cta-title">Vamos criar algo incrível juntos?</h2>
+                    <p class="cta-description">
+                        Este espaço está reservado para o seu próximo projeto. Entre em contato
+                        e vamos transformar sua ideia em realidade digital.
+                    </p>
+                    <a href="contato.html" class="cta-button">
+                        <span>Iniciar conversa</span>
+                        <i class="ri-arrow-right-up-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-visual">
+                <img src="assets/images/portfolio/outros/cover.webp" alt="Seu próximo projeto">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="scroll-top-btn" aria-label="Voltar ao topo">
+                <i class="ri-arrow-up-s-line icon-lg"></i>
+            </a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev"
+                        class="footer-logo">
+                    <p>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio
+                        perfeito entre domínio técnico e visão criativa.</p>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h4>Atendimento</h4>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-mail-send-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="mailto:contato@micheldouglas.dev">contato@micheldouglas.dev</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-whatsapp-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="https://wa.me/5591993706923" target="_blank">(91) 99370-6923</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="contact-icon-box">
+                            <i class="ri-map-pin-5-line icon-sm icon-primary"></i>
+                        </div>
+                        <a href="https://maps.app.goo.gl/MFLq5aW8mKk6zvJTA" target="_blank">
+                            TV. Brasil, 30 - Marambaia, Cametá - PA, 68400-000
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html#inicio">Início</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Me acompanhe</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/micheldouglas-dev" target="_blank" data-network="github"
+                            aria-label="GitHub">
+                            <i class="ri-github-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/micheldouglasdev/" target="_blank" data-network="linkedin"
+                            aria-label="LinkedIn">
+                            <i class="ri-linkedin-box-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://instagram.com/micheldouglas.dev" target="_blank" data-network="instagram"
+                            aria-label="Instagram">
+                            <i class="ri-instagram-fill icon-md icon-primary"></i>
+                        </a>
+                        <a href="https://facebook.com/micheldouglasdev" target="_blank" data-network="facebook"
+                            aria-label="Facebook">
+                            <i class="ri-facebook-circle-fill icon-md icon-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev">
+                </div>
+                <div class="copyright">
+                    <p>© <span class="copyright-year">2026</span> – <strong>MichelDouglas.dev</strong> Todos os
+                        direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+
+</body>
+
+</html>

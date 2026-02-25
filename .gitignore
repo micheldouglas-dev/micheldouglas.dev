@@ -89,6 +89,9 @@ robots.txt
 sitemap.xml
 
 # ========== ESPECÍFICO DO PROJETO ==========
+# Credenciais SMTP — NUNCA versionar este arquivo
+api/config.php
+
 # Adicione aqui arquivos específicos que não devem ser versionados
 assets/images/portfolio/*-original.*
 docs/drafts/
