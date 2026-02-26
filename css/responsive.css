@@ -74,6 +74,50 @@
     }
 }
 
+/* ========== SERVIÇOS - ALINHAMENTO IMAGEM/TEXTO (1350px) ========== */
+/* Abaixo deste ponto a imagem fica mais curta que o texto por ser height:auto.
+   A solução é esticar o card (stretch) e fazer a imagem cobrir o espaço todo. */
+@media (max-width: 1350px) {
+
+    .service-card {
+        align-items: stretch;
+    }
+
+    .service-image-box {
+        height: 100%;
+        min-height: 280px;
+    }
+
+    .service-image-box img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Com imagens em altura total, o gap padrão (40px) fica apertado */
+    .services-grid {
+        gap: var(--space-20);
+    }
+}
+
+/* ========== PROCESSO - CASCATA REDUZIDA (1400px) ========== */
+/* A partir daqui o texto do process-content começa a sobrepor os cards */
+@media (max-width: 1400px) {
+
+    /* Empurra o bloco de cards para baixo, longe do conteúdo de texto */
+    .process-steps {
+        margin-top: var(--space-20);
+    }
+
+    /* Reduz os offsets da cascata proporcionalmente */
+    .process-card:nth-child(2) {
+        margin-top: -30px;
+    }
+
+    .process-card:nth-child(3) {
+        margin-top: -60px;
+    }
+}
+
 /* ========== TABLET & BELOW (1024px) ========== */
 @media (max-width: 1024px) {
 
@@ -84,7 +128,7 @@
 
     /* Hero */
     .hero h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(2rem, 8vw, 3.5rem);
     }
 
     .hero p {
@@ -114,18 +158,18 @@
 
     .about-content {
         padding-right: 0;
-        order: 2;
+        order: 1;
     }
 
     .about-visual {
-        order: 1;
+        order: 2;
         min-height: 400px;
     }
 
     /* Services */
     .services-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-6);
+        gap: var(--space-16);
     }
 
     .service-card.featured {
@@ -217,6 +261,16 @@
         /* Hide complex graphics on tablets */
     }
 
+    /* Remove cascata: grid vai 1 coluna e o texto ocupa mais altura */
+    .process-steps {
+        margin-top: var(--space-12);
+    }
+
+    .process-card:nth-child(2),
+    .process-card:nth-child(3) {
+        margin-top: 0;
+    }
+
     /* Contact */
     .contact-grid {
         grid-template-columns: 1fr;
@@ -243,6 +297,27 @@
 
     .scroll-top-btn {
         right: var(--space-6);
+    }
+}
+
+/* ========== PROCESSO - CARDS EMPILHADOS (959px) ========== */
+/* 3 cards lado a lado ficam sem formatação abaixo de 959px */
+@media (max-width: 959px) {
+
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-12);
+    }
+
+    .process-card {
+        min-height: auto;
+    }
+
+    .process-card:nth-child(1),
+    .process-card:nth-child(2),
+    .process-card:nth-child(3) {
+        margin-top: 0;
     }
 }
 
@@ -288,8 +363,8 @@
     }
 
     .hero-title {
-        font-size: clamp(1.75rem, 8vw, 2.5rem);
-        line-height: 1.2;
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+        line-height: 1.15;
         text-align: left;
         margin-bottom: var(--space-8);
         display: flex;
@@ -367,7 +442,7 @@
 
     /* Typography */
     .section-title {
-        font-size: var(--text-3xl);
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
     }
 
     .section-description {
@@ -404,7 +479,7 @@
         gap: 0;
     }
 
-    /* ESCONDE visual (recomendado) */
+    /* Visual oculto no mobile — sem espaço residual */
     .about-visual {
         display: none;
     }
@@ -423,7 +498,7 @@
 
     /* Título */
     .about-section .section-title {
-        font-size: clamp(1.75rem, 6vw, 2.25rem);
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
         line-height: 1.2;
         margin-bottom: var(--space-6);
     }
@@ -440,11 +515,11 @@
         color: var(--text-gray-dark);
     }
 
-    /* ESCONDE elementos visuais confusos */
+    /* Floating tags e bg ocultos no mobile — ocupam espaço desnecessário */
     .float-tag,
     .float-el,
     .bg-code {
-        display: none !important;
+        display: none;
     }
 
     /* Skills Keywords */
@@ -730,7 +805,7 @@
 
     /* Título */
     .portfolio-title {
-        font-size: clamp(1.5rem, 5vw, 2rem);
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
         line-height: 1.2;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -877,7 +952,7 @@
 
         /* Hero */
         .hero h1 {
-            font-size: 1.75rem;
+            font-size: clamp(2rem, 10vw, 3.5rem);
         }
 
         .hero-tag {
@@ -969,11 +1044,11 @@
 
         /* Hero */
         .hero h1 {
-            font-size: 1.5rem;
+            font-size: clamp(1.75rem, 9vw, 2.5rem);
         }
 
         .hero p {
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
         }
 
         /* Sections */
@@ -1250,7 +1325,8 @@
 
         .float-tag,
         .process-visual,
-        .portfolio-overlay {
+        .portfolio-overlay,
+        .scroll-indicator {
             animation: none;
         }
     }
@@ -1282,3 +1358,36 @@
         /* Hide connecting lines between steps */
     }
 }
+
+/* ========================================================
+   STYLE.CSS — CTA section / Footer
+   ======================================================== */
+
+@media (max-width: 900px) {
+    .floating-elements {
+        display: none;
+    }
+
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .float-badge.excellence {
+        position: static;
+        margin-bottom: 20px;
+        transform: none;
+        animation: none;
+        background: #f5f5f5;
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        right: var(--space-6);
+    }
+}
+

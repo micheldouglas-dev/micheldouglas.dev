@@ -286,7 +286,7 @@ class InfiniteLoop {
 
     init() {
         if (this.track) {
-            // Clona o conteúdo da lista para garantir o loop infinito perfeito
+            // Duplica o conteúdo da trilha: quando a animação chega a 50% ela recomeça sem salto visual
             const clone = this.track.innerHTML;
             this.track.innerHTML += clone;
         }
@@ -296,22 +296,23 @@ class InfiniteLoop {
 // ========== INICIALIZAÇÃO (Opcional) ==========
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Ative apenas os efeitos que deseja usar:
-    // 1. Infinite Scroll (Skills)
+    // ---- Ative apenas os efeitos desejados ----
+
+    // 1. Loop infinito da faixa de palavras-chave (Seção Sobre)
     const infiniteLoop = new InfiniteLoop('.keywords-track');
 
-    // 2. Outras inicializações (se você for usar)
+    // 2. Efeitos opcionais (descomente para usar):
     // const parallax = new ParallaxEffect();
     // const scrollProgress = new ScrollProgress();
     // const textReveal = new TextReveal();
     // const magneticBtns = new MagneticButtons();
 
-    // Cursor personalizado (apenas desktop)
+    // Cursor personalizado (somente desktop)
     // if (window.innerWidth > 768) {
     //     const customCursor = new CustomCursor();
     // }
 
-    // Typing effect no hero (exemplo)
+    // Efeito de digitação no hero (exemplo de uso)
     // const typingElement = document.querySelector('[data-typing]');
     // if (typingElement) {
     //     new TypingEffect(typingElement, [
@@ -321,12 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //     ]);
     // }
 
-    // Particles background
+    // Fundo de partículas animadas
     // const particles = new ParticlesBackground('particles-canvas');
 
 });
 
-// Export para uso em outros módulos
+// Exporta classes para uso em outros módulos (compatibilidade com Node.js/bundlers)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         ParallaxEffect,

@@ -17,14 +17,14 @@
     <meta property="og:url" content="https://micheldouglas.dev/contato">
     <meta property="og:title" content="Contato - Michel Douglas">
     <meta property="og:description" content="Entre em contato e vamos transformar sua ideia em realidade digital">
-    <meta property="og:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete/cover.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://micheldouglas.dev/contato">
     <meta property="twitter:title" content="Contato - Michel Douglas">
     <meta property="twitter:description" content="Entre em contato e vamos transformar sua ideia em realidade digital">
-    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete/cover.webp">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
@@ -106,7 +106,7 @@
                     <div class="form-field form-field-full">
                         <label for="inputNome" class="form-label required">Nome completo</label>
                         <input type="text" id="inputNome" name="nome" class="form-input" placeholder="Seu nome completo"
-                            required>
+                            required maxlength="100" minlength="3">
                     </div>
                     <!-- Email e WhatsApp (lado a lado) -->
                     <div class="form-row">
@@ -117,8 +117,9 @@
                         </div>
                         <div class="form-field">
                             <label for="inputWhatsapp" class="form-label required">Celular / WhatsApp</label>
-                            <input type="tel" id="inputWhatsapp" name="whatsapp" class="form-input"
-                                placeholder="(DDD) 9 9999-9999" required>
+                            <input type="text" inputmode="tel" id="inputWhatsapp" name="whatsapp" class="form-input"
+                                placeholder="(DDD) 9 9999-9999" required
+                                maxlength="16" autocomplete="tel">
                         </div>
                     </div>
                 </div>
@@ -190,7 +191,7 @@
                             projeto</label>
                         <textarea id="inputDescricao" name="descricao" class="form-textarea" rows="5"
                             placeholder="Digite aqui com mais detalhes o que você está buscando ou alguma observação, se necessário."
-                            required></textarea>
+                            required minlength="10" maxlength="5000"></textarea>
                     </div>
                 </div>
 
@@ -297,6 +298,7 @@
                         <li><a href="index.html#inicio">Início</a></li>
                         <li><a href="index.html#sobre">Sobre</a></li>
                         <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="index.html#processo">Processo</a></li>
                         <li><a href="index.html#portfolio">Portfólio</a></li>
                     </ul>
                 </div>

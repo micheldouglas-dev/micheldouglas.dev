@@ -358,12 +358,18 @@
     transform: scale(1.03);
 }
 
+/* ========== FILTRO ATIVO (JavaScript) ========== */
+.project-card.hidden {
+    display: none;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .cta-container {
         grid-template-columns: 1fr;
         min-height: auto;
         gap: var(--space-8);
+        padding: var(--space-12) var(--space-6);
     }
 
     .cta-content {
@@ -381,15 +387,7 @@
         min-height: 400px;
         padding-left: 0;
     }
-}
 
-/* ========== FILTRO ATIVO (JavaScript) ========== */
-.project-card.hidden {
-    display: none;
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
     .portfolio-hero {
         padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
     }
@@ -404,11 +402,11 @@
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-6);
+        gap: var(--space-4);
     }
 
     .project-image {
-        height: 220px;
+        height: 180px;
     }
 
     .portfolio-cta .cta-content h2 {

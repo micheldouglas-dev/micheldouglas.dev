@@ -427,12 +427,6 @@
     border-radius: 16px;
 }
 
-@media (max-width: 768px) {
-    .screenshots-swiper .swiper-slide {
-        height: 400px;
-    }
-}
-
 /* ========== 8. CTA FINAL (Seção de Conversão) ========== */
 .portfolio-final-cta {
     background: var(--bg-light);
@@ -576,8 +570,7 @@
     transform: scale(1.03);
 }
 
-/* ========== 9. RESPONSIVO ========== */
-
+/* ========== RESPONSIVE ========== */
 @media (max-width: 968px) {
     .layout-grid {
         grid-template-columns: 1fr;
@@ -603,6 +596,10 @@
 }
 
 @media (max-width: 768px) {
+    .screenshots-swiper .swiper-slide {
+        height: 400px;
+    }
+
     .case-hero {
         padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-8);
     }
@@ -652,28 +649,6 @@
     .screenshots-slider img {
         max-width: 90vw;
     }
-
-    .cta-container {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        gap: var(--space-8);
-    }
-
-    .cta-content {
-        padding-right: 0;
-        text-align: center;
-        align-items: center;
-    }
-
-    .cta-header {
-        justify-content: center;
-        gap: var(--space-4);
-    }
-
-    .cta-visual {
-        min-height: 400px;
-        padding-left: 0;
-    }
 }
 
 @media (max-width: 480px) {
@@ -685,3 +660,4 @@
         grid-template-columns: 1fr;
     }
 }
+

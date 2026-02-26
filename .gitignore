@@ -92,6 +92,12 @@ sitemap.xml
 # Credenciais SMTP — NUNCA versionar este arquivo
 api/config.php
 
+# Claude Code — configurações locais de sessão
+.claude/
+
+# Vídeos grandes (já rastreados — previne novos adds acidentais)
+# assets/videos/*.mp4
+
 # Adicione aqui arquivos específicos que não devem ser versionados
 assets/images/portfolio/*-original.*
 docs/drafts/

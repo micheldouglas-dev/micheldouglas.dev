@@ -5,12 +5,8 @@
 
 class TypewriterEffect {
     constructor(elementId, words, options = {}) {
-        // Configurações
         this.element = document.getElementById(elementId);
-        if (!this.element) {
-            console.error(`Elemento ${elementId} não encontrado`);
-            return;
-        }
+        if (!this.element) return;
 
         this.words = words;
         this.wordIndex = 0;
@@ -25,8 +21,7 @@ class TypewriterEffect {
             pauseBeforeStart: options.pauseBeforeStart || 500  // Pausa antes de começar (0.5s)
         };
 
-        // Inicia o efeito
-        this.init();
+            this.init();
     }
 
     init() {
@@ -121,20 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
         'intuitivas'
     ];
 
-    // Inicializa o efeito
     const typewriter = new TypewriterEffect('typewriterWord', words, {
-        typingSpeed: 100,      // 100ms por letra (velocidade natural)
-        deletingSpeed: 50,     // 50ms por letra (apaga mais rápido)
-        pauseAfterWord: 2000,  // 2 segundos lendo a palavra
-        pauseBeforeStart: 300  // 0.3s antes de começar
+        typingSpeed: 100,      // 100ms por letra
+        deletingSpeed: 50,     // 50ms por letra (apaga mais rápido que digita)
+        pauseAfterWord: 2000,  // 2s de pausa após completar a palavra
+        pauseBeforeStart: 300  // 0.3s antes de iniciar
     });
 
-    // Log de inicialização
-    console.log('✨ Typewriter Effect inicializado');
-    console.log(`📝 Palavras: ${words.join(', ')}`);
-
     // ==========================================
-    // OPCIONAL: Pausar quando sai da aba
+    // Pausa quando o usuário sai da aba (economia de recursos)
     // ==========================================
 
     document.addEventListener('visibilitychange', () => {
@@ -155,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // EASTER EGG: Trocar palavras ao pressionar tecla
+    // Easter Egg: pressionar "T" 3x troca as palavras
     // ==========================================
 
     let secretKeyCount = 0;
@@ -164,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             secretKeyCount++;
 
             if (secretKeyCount === 3) {
-                // Pressionou 'T' 3 vezes = ativa palavras secretas
                 const secretWords = [
                     'épicas',
                     'fantásticas',
@@ -174,12 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ];
 
                 typewriter.updateWords(secretWords);
-                console.log('🎉 Easter Egg ativado! Palavras secretas carregadas.');
-
-                secretKeyCount = 0; // Reset
+                secretKeyCount = 0;
             }
         } else {
-            secretKeyCount = 0; // Reset se pressionar outra tecla
+            secretKeyCount = 0;
         }
     });
 });

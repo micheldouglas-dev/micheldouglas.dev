@@ -155,7 +155,7 @@
     --container-xl: 1280px;
     --container-2xl: 1400px;
 
-    /* Header Height */
+    /* Altura do Header */
     --header-height: 72px;
 
     /* ========== BORDER RADIUS ========== */
@@ -212,9 +212,9 @@
     --gradient-overlay: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
 }
 
-/* ========== DARK MODE (Opcional - Futuro) ========== */
+/* ========== MODO ESCURO (Opcional — implementação futura) ========== */
 [data-theme="dark"] {
-    /* Inversão de cores para modo escuro */
+    /* Sobrescreve as variáveis de cor para o tema escuro */
     --bg-white: var(--bg-primary);
     --bg-light: var(--bg-secondary);
     --text-dark: var(--text-light);

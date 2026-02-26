@@ -226,7 +226,7 @@
     animation: pulse 0.3s ease;
 }
 
-/* Button Hover Effects */
+/* Efeito de ripple nos botões ao passar o mouse */
 .btn-primary,
 .btn-secondary,
 .btn-cta,
@@ -255,7 +255,7 @@
     height: 300px;
 }
 
-/* Loading State */
+/* Estado de Carregamento (skeleton screen) */
 .loading {
     position: relative;
     background: linear-gradient(
@@ -268,7 +268,7 @@
     animation: shimmer 2s infinite;
 }
 
-/* Gradient Text Animation (opcional) */
+/* Texto com gradiente animado (opcional) */
 .gradient-text-animated {
     background: linear-gradient(
         90deg,
@@ -283,7 +283,7 @@
     animation: gradientShift 3s ease infinite;
 }
 
-/* Scroll Progress Bar (opcional) */
+/* Barra de progresso de rolagem (opcional) */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -296,7 +296,7 @@
     transition: transform 0.1s ease;
 }
 
-/* Mobile Menu Animation */
+/* Animação do Menu Mobile */
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
 }
@@ -309,28 +309,10 @@
     transform: rotate(-45deg) translateY(-8px);
 }
 
-/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+/* ========== OTIMIZAÇÕES DE PERFORMANCE ========== */
 
-/* Reduzir animações para usuários que preferem menos movimento */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .scroll-indicator {
-        animation: none;
-    }
-    
-    .float-tag {
-        animation: none;
-    }
-}
 
-/* Hardware Acceleration para animações suaves */
+/* Aceleração por hardware para animações mais suaves */
 .hero-video,
 .float-tag,
 .portfolio-item,
@@ -342,7 +324,7 @@
     -webkit-backface-visibility: hidden;
 }
 
-/* Remove will-change após animação */
+/* Remove will-change após a animação para liberar memória GPU */
 .animated {
     will-change: auto;
 }
