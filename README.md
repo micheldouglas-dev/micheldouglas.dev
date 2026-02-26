@@ -1,19 +1,28 @@
+<!-- ══════════════════════ HEADER ══════════════════════ -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="middle">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-white.svg">
+        <img alt="MichelDouglas.dev" src="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-black.svg" width="220">
+      </picture>
+    </td>
+    <td align="right" valign="middle">
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+      <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a>
+      <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+    </td>
+  </tr>
+</table>
+
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-white.svg">
-  <img alt="MichelDouglas.dev" src="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-black.svg" width="280">
-</picture>
-
-<br><br>
+<br>
 
 **✦ Transformando ideias em experiências digitais**
 
-[![Site](https://img.shields.io/badge/micheldouglas.dev-F11348?style=for-the-badge&logo=googlechrome&logoColor=white)](https://micheldouglas.dev)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Ver site ao vivo →](https://img.shields.io/badge/Ver_site_ao_vivo_→-15161C?style=for-the-badge&logo=googlechrome&logoColor=F11348)](https://micheldouglas.dev)
 
 </div>
 
@@ -24,12 +33,6 @@
 Portfólio profissional desenvolvido do zero em HTML, CSS e JavaScript puro — sem frameworks, sem dependências desnecessárias. Cada detalhe foi pensado para comunicar identidade, competência e cuidado com a experiência do usuário.
 
 O site reúne minha atuação como **Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code**, apresentando serviços, metodologia de trabalho e cases reais de projetos entregues.
-
-<div align="center">
-
-[![Ver site ao vivo →](https://img.shields.io/badge/Ver_site_ao_vivo_→-15161C?style=for-the-badge&logo=vercel&logoColor=F11348)](https://micheldouglas.dev)
-
-</div>
 
 ---
 
@@ -179,22 +182,42 @@ Abra o `index.html` diretamente no navegador, ou use uma extensão como **Live S
 
 ---
 
-<div align="center">
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<table width="100%" border="0" cellspacing="0" cellpadding="8">
+  <tr>
+    <td valign="top" width="45%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-white.svg">
+        <img alt="MichelDouglas.dev" src="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/micheldouglas-logo-black.svg" width="200">
+      </picture>
+      <br><br>
+      <sub>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio perfeito entre domínio técnico e visão criativa.</sub>
+    </td>
+    <td valign="top" width="28%">
+      <strong>Atendimento</strong><br><br>
+      <a href="mailto:contato@micheldouglas.dev"><img src="https://img.shields.io/badge/contato%40micheldouglas.dev-F11348?style=flat-square&logo=gmail&logoColor=white" alt="E-mail"></a><br><br>
+      <a href="https://wa.me/5591993706923"><img src="https://img.shields.io/badge/(91)%2099370--6923-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp"></a><br><br>
+      <a href="https://maps.app.goo.gl/MFLq5aW8mKk6zvJTA"><img src="https://img.shields.io/badge/Cametá%2C%20PA%2C%20Brasil-F11348?style=flat-square&logo=googlemaps&logoColor=white" alt="Localização"></a>
+    </td>
+    <td valign="top" width="27%">
+      <strong>Me acompanhe</strong><br><br>
+      <a href="https://github.com/micheldouglas-dev"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/micheldouglasdev/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a><br><br>
+      <a href="https://instagram.com/micheldouglas.dev"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
+      <a href="https://facebook.com/micheldouglasdev"><img src="https://img.shields.io/badge/Facebook-1877F2?style=flat-square&logo=facebook&logoColor=white" alt="Facebook"></a>
+    </td>
+  </tr>
+</table>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/mi-logo.svg">
-  <img alt="MI" src="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/mi-logo.svg" width="40">
-</picture>
+---
 
-<br>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/micheldouglasdev/)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://instagram.com/micheldouglas.dev)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/micheldouglas-dev)
-[![E-mail](https://img.shields.io/badge/contato@micheldouglas.dev-F11348?style=flat-square&logo=gmail&logoColor=white)](mailto:contato@micheldouglas.dev)
-
-<br>
-
-© 2026 **Michel Douglas** · Todos os direitos reservados · Feito com foco em Cametá, Pará, Brasil 🌿
-
-</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="middle">
+      <img src="https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/logo/mi-logo.svg" alt="MI" width="32">
+    </td>
+    <td align="right" valign="middle">
+      <sub>© 2026 <strong>Michel Douglas</strong> – Todos os direitos reservados.</sub>
+    </td>
+  </tr>
+</table>
