@@ -40,7 +40,7 @@ O site reúne minha atuação como **Designer UX/UI e Desenvolvedor Full-Stack e
 
 <div align="center">
 
-![Preview do site](https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/portfolio/quitinete/cover.webp)
+![Preview do site](https://raw.githubusercontent.com/micheldouglas-dev/micheldouglas.dev/main/assets/images/about/micheldouglas.dev.jpeg)
 
 </div>
 
