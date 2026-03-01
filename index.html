@@ -18,14 +18,14 @@
     <meta property="og:url" content="https://micheldouglas.dev/">
     <meta property="og:title" content="Michel Douglas - Designer & Full-Stack Developer">
     <meta property="og:description" content="Transformando ideias em experiências digitais memoráveis">
-    <meta property="og:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete/cover.webp">
+    <meta property="og:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://micheldouglas.dev/">
     <meta property="twitter:title" content="Michel Douglas - Designer & Full-Stack Developer">
     <meta property="twitter:description" content="Transformando ideias em experiências digitais memoráveis">
-    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/portfolio/quitinete/cover.webp">
+    <meta property="twitter:image" content="https://micheldouglas.dev/assets/images/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg">
@@ -37,17 +37,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Preconnect para CDNs -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Variables CSS inline (elimina HTTP request do caminho crítico) -->
+    <style>
+        :root{--primary-accent:#f11348;--primary-hover:#ed1136;--primary-light:#ff6978;--primary-dark:#c8092a;--secondary-accent:#ff6978;--secondary-accent-light:#FFE2E4;--bg-primary:#15161C;--bg-secondary:#1a1b22;--bg-tertiary:#e0e3e7;--bg-white:#FFFFFF;--bg-light:#fcfcfc;--text-light:#F5F6FC;--text-gray:#828491;--text-gray-dark:#3b3d41;--text-white:#FFFFFF;--text-dark:#15161C;--accent-coral:#ee495f;--accent-purple:#5d5dec;--accent-teal:#48b6e3;--accent-neutral:#6b7280;--accent-gold:#f59e0b;--success:#227950;--error:#ed1136;--warning:#ff8800;--info:#1668e3;--font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-code:'Fira Code','Courier New',monospace;--text-xs:.75rem;--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-3xl:1.875rem;--text-4xl:2.25rem;--text-5xl:3rem;--text-6xl:3.75rem;--font-light:300;--font-normal:400;--font-medium:500;--font-semibold:600;--font-bold:700;--font-extrabold:800;--leading-tight:1.25;--leading-normal:1.5;--leading-relaxed:1.75;--tracking-tight:-0.025em;--tracking-normal:0em;--tracking-wide:0.025em;--tracking-wider:0.05em;--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;--space-36:10rem;--container-sm:640px;--container-md:768px;--container-lg:1024px;--container-xl:1280px;--container-2xl:1400px;--header-height:72px;--radius-sm:.25rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;--shadow-sm:0 1px 2px 0 rgba(0,0,0,.05);--shadow-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);--shadow-xl:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);--shadow-2xl:0 25px 50px -12px rgba(0,0,0,.25);--shadow-accent:0 4px 10px rgba(241,19,72,.3);--shadow-secondary:0 0 25px rgba(241,19,72,.6);--transition-fast:150ms ease-in-out;--transition-base:250ms ease-in-out;--transition-slow:350ms ease-in-out;--z-dropdown:1000;--z-sticky:1020;--z-fixed:1030;--z-modal-backdrop:1040;--z-modal:1050;--z-popover:1060;--z-tooltip:1070;--gradient-primary:linear-gradient(135deg,var(--primary-accent) 0%,var(--primary-hover) 100%);--gradient-secondary:linear-gradient(135deg,var(--primary-accent) 0%,var(--secondary-accent) 100%);--gradient-dark:linear-gradient(180deg,var(--bg-primary) 0%,var(--bg-secondary) 100%);--gradient-overlay:linear-gradient(180deg,rgba(15,23,42,.7) 0%,rgba(15,23,42,.9) 100%)}
+    </style>
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Preload recursos críticos -->
+    <link rel="preload" href="assets/images/logo/micheldouglas-logo-white.svg" as="image" type="image/svg+xml">
 
-    <!-- Remix Icon CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Swiper CSS: diferido (portfolio está abaixo do fold) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <!-- Remix Icon: diferido (ícones são decorativos, não bloqueiam conteúdo) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"></noscript>
 
 </head>
 
@@ -59,7 +71,9 @@
             <!-- Logo -->
             <div class="header-brand">
                 <a href="#inicio" class="logo">
-                    <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev">
+                    <div class="logo-wrapper">
+                        <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev" class="logo-img" fetchpriority="high" width="160" height="40">
+                    </div>
                 </a>
             </div>
 
@@ -90,11 +104,12 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="inicio">
-        <!-- Background Video -->
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/videos/hero-background.webm" type="video/webm">
-            <source src="assets/videos/hero-background.mp4" type="video/mp4">
-        </video>
+        <!-- Background Mesh Gradient (substitui vídeo - 0KB) -->
+        <div class="hero-mesh" aria-hidden="true">
+            <div class="hero-mesh-blob blob-1"></div>
+            <div class="hero-mesh-blob blob-2"></div>
+            <div class="hero-mesh-blob blob-3"></div>
+        </div>
 
         <!-- Overlay -->
         <div class="hero-overlay"></div>
@@ -122,16 +137,16 @@
             <div class="hero-clients">
                 <span class="clients-label">Clientes que inovam comigo</span>
                 <div class="clients-logos">
-                    <img src="assets/images/clients/quitinete-logo.svg" alt="Quitinete App">
-                    <img src="assets/images/clients/semed-logo.svg" alt="SEMED Cametá">
-                    <img src="assets/images/clients/ifpa-logo.svg" alt="IFPA">
-                    <img src="assets/images/clients/muta-logo.svg" alt="Mutã">
+                    <img src="assets/images/clients/quitinete-logo.svg" alt="Quitinete App" width="120" height="24">
+                    <img src="assets/images/clients/semed-logo.svg" alt="SEMED Cametá" width="120" height="24">
+                    <img src="assets/images/clients/ifpa-logo.svg" alt="IFPA" width="120" height="24">
+                    <img src="assets/images/clients/muta-logo.svg" alt="Mutã" width="120" height="24">
                 </div>
             </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <a href="#sobre" class="scroll-indicator">
+        <a href="#sobre" class="scroll-indicator" aria-label="Ir para a seção Sobre">
             <i class="ri-scroll-to-bottom-line icon-lg"></i>
         </a>
     </section>
@@ -179,7 +194,7 @@
                 <!-- Visual -->
                 <div class="about-visual">
                     <div class="about-image-wrapper">
-                        <img src="assets/images/about/bg-code.png" class="bg-code" alt="Background Code">
+                        <img src="assets/images/about/bg-code.png" class="bg-code" alt="Background Code" loading="lazy" width="600" height="500">
 
                         <!-- Floating Tags -->
 
@@ -217,7 +232,7 @@
                 <div class="service-card">
 
                     <div class="service-image-box">
-                        <img src="assets/images/service/web/cover.webp" alt="Website e Serviços Digitais">
+                        <img src="assets/images/service/web/cover.webp" alt="Website e Serviços Digitais" loading="lazy" width="612" height="459">
                     </div>
 
                     <div class="service-content">
@@ -254,7 +269,7 @@
                             experiências de usuário memoráveis e funcionais.</p>
                     </div>
                     <div class="service-image-box">
-                        <img src="assets/images/service/mobile/cover.webp" alt="Aplicativo Mobile">
+                        <img src="assets/images/service/mobile/cover.webp" alt="Aplicativo Mobile" loading="lazy" width="612" height="408">
                     </div>
 
                 </div>
@@ -263,7 +278,7 @@
                 <div class="service-card">
 
                     <div class="service-image-box">
-                        <img src="assets/images/service/design/cover.webp" alt="Identidade Visual & Branding">
+                        <img src="assets/images/service/design/cover.webp" alt="Identidade Visual & Branding" loading="lazy" width="612" height="408">
                     </div>
 
                     <div class="service-content">
@@ -300,7 +315,7 @@
                             tomada de decisão.</p>
                     </div>
                     <div class="service-image-box">
-                        <img src="assets/images/service/auto/cover.webp" alt="Plataformas Digitais">
+                        <img src="assets/images/service/auto/cover.webp" alt="Plataformas Digitais" loading="lazy" width="612" height="408">
                     </div>
 
                 </div>
@@ -328,7 +343,7 @@
                 </div>
 
                 <div class="process-visual">
-                    <img src="assets/images/about/bg-code.png" alt="Código de fundo" loading="lazy">
+                    <img src="assets/images/about/bg-code.png" alt="Código de fundo" loading="lazy" width="600" height="500">
                 </div>
             </div>
 
@@ -466,7 +481,115 @@
                         </div>
                     </div>
 
-                    <!-- Slide 3: Projeto 3 (Placeholder) -->
+                    <!-- Slide 4: Mutã -->
+                    <div class="swiper-slide" data-project="muta">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Web Design & WordPress</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Mutã — Agência de Serviços Digitais</h2>
+                                    <p class="portfolio-description">
+                                        Site institucional desenvolvido em WordPress para agência de serviços digitais, com foco em SEO, design responsivo e geração de leads qualificados.
+                                    </p>
+                                    <a href="portfolio/muta.html" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-primary">
+                                <img src="assets/images/portfolio/muta/cover.webp" alt="Mutã Website" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Teteé -->
+                    <div class="swiper-slide" data-project="tetee">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Game Educativo & Realidade Aumentada</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Teteé — Educação Ambiental com AR</h2>
+                                    <p class="portfolio-description">
+                                        Jogo educativo em Unity com Realidade Aumentada e QR codes para sensibilizar alunos sobre preservação ambiental, coleta seletiva e reciclagem.
+                                    </p>
+                                    <a href="portfolio/tetee.html" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-success">
+                                <img src="assets/images/portfolio/tetee/cover.webp" alt="Teteé Game" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: 8 Pila -->
+                    <div class="swiper-slide" data-project="8pila">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Game 2D & Pixel Art</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">8 Pila — Puzzle Platformer Brasileiro</h2>
+                                    <p class="portfolio-description">
+                                        Aventura 2D com mecânica de golfe e arte em pixel art. O jogador lança um personagem pelo cenário com o objetivo de chegar ao destino com o menor número de movimentos.
+                                    </p>
+                                    <a href="portfolio/8pila.html" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-info">
+                                <img src="assets/images/portfolio/8pila/cover.webp" alt="8 Pila Game" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7: Caa-Muta -->
+                    <div class="swiper-slide" data-project="caa-muta">
+                        <div class="portfolio-slide">
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <span class="portfolio-label">PROJETO</span>
+                                    <span class="portfolio-category">Game Regional & Unity</span>
+                                </div>
+
+                                <div class="portfolio-body">
+                                    <h2 class="portfolio-title">Caa-Muta — Aventura Regional contra o E-Lixo</h2>
+                                    <p class="portfolio-description">
+                                        Jogo de plataforma 2D ambientado nas paisagens de Cametá, onde o jogador realiza um mutirão de limpeza tecnológica recolhendo e-lixo pelo cenário.
+                                    </p>
+                                    <a href="portfolio/caa-muta.html" class="portfolio-btn">
+                                        <span>Ver projeto completo</span>
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-visual bg-dark">
+                                <img src="assets/images/portfolio/caa-muta/cover.png" alt="Caa-Muta Game" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8: Projeto (Placeholder) -->
                     <div class="swiper-slide" data-project="next">
                         <div class="portfolio-slide">
                             <div class="portfolio-content">
@@ -549,7 +672,7 @@
                 <!-- Logo + Descrição -->
                 <div class="footer-brand">
                     <img src="assets/images/logo/micheldouglas-logo-white.svg" alt="MichelDouglas.dev"
-                        class="footer-logo">
+                        class="footer-logo" loading="lazy" width="160" height="40">
                     <p>Designer UX/UI e Desenvolvedor Full-Stack especializado em Low-Code, trazendo o equilíbrio
                         perfeito entre domínio técnico e visão criativa.</p>
                 </div>
@@ -623,18 +746,16 @@
             <!-- Copyright -->
             <div class="footer-bottom">
                 <div class="footer-logo">
-                    <img src="assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev">
+                    <img src="assets/images/logo/mi-logo.svg" alt="MichelDouglas.dev" loading="lazy" width="40" height="40">
                 </div>
                 <div class="copyright">
-                    <p>© <span class="copyright-year">2026</span> – <strong>MichelDouglas.dev</strong> Todos os direitos
-                        reservados.</p>
+                    <p>© <span class="copyright-year">2026</span> – <strong>MichelDouglas.dev</strong><br>Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Scripts (Swiper carregado via lazy load em main.js) -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/typewriter.js"></script>

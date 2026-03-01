@@ -429,7 +429,7 @@
 
 /* ========== 8. CTA FINAL (Seção de Conversão) ========== */
 .portfolio-final-cta {
-    background: var(--bg-light);
+    background: var(--bg-primary);
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -453,7 +453,7 @@
     justify-content: center;
     gap: var(--space-6);
     padding-right: var(--space-10);
-    background: var(--bg-light);
+    background: var(--bg-primary);
 }
 
 .cta-header {
@@ -488,7 +488,7 @@
 .cta-title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: var(--font-bold);
-    color: var(--text-dark);
+    color: var(--text-white);
     line-height: var(--leading-tight);
     margin: 0;
 }
@@ -509,10 +509,10 @@
     width: fit-content;
     font-size: var(--text-base);
     font-weight: var(--font-semibold);
-    color: var(--text-dark);
+    color: var(--text-white);
     text-decoration: none;
     background: transparent;
-    border: 2px solid var(--secondary-accent-light);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
     transition: all var(--transition-base);
 }
@@ -541,7 +541,7 @@
     align-items: center;
     justify-content: center;
     overflow: visible;
-    background: var(--bg-light);
+    background: var(--text-gray-dark);
     padding-left: var(--space-10);
 }
 
@@ -552,7 +552,7 @@
     left: 0;
     right: -100vw;
     bottom: 0;
-    background: var(--bg-light);
+    background: var(--text-gray-dark);
     z-index: 0;
 }
 
@@ -596,6 +596,29 @@
 }
 
 @media (max-width: 768px) {
+    .cta-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: var(--space-8);
+        padding: var(--space-12) var(--space-6);
+    }
+
+    .cta-content {
+        padding-right: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .cta-header {
+        justify-content: center;
+        gap: var(--space-4);
+    }
+
+    .cta-visual {
+        min-height: 400px;
+        padding-left: 0;
+    }
+
     .screenshots-swiper .swiper-slide {
         height: 400px;
     }

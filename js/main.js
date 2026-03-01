@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    let scrollTicking = false;
+
     function handleScroll() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -18,33 +20,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atualiza link ativo baseado na seção visível
         updateActiveLink();
+        scrollTicking = false;
     }
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(handleScroll);
+            scrollTicking = true;
+        }
+    }, { passive: true });
 
     // ========== ACTIVE LINK DETECTION ==========
+    // Cache das posições das seções (recalculado apenas no resize)
+    let sectionCache = [];
+
+    function buildSectionCache() {
+        // rAF garante que o layout já foi calculado — evita forced reflow
+        requestAnimationFrame(() => {
+            const sections = document.querySelectorAll('section[id]');
+            sectionCache = Array.from(sections).map(section => ({
+                id: section.getAttribute('id'),
+                top: section.offsetTop - 150,
+                bottom: section.offsetTop - 150 + section.offsetHeight
+            }));
+        });
+    }
+
+    buildSectionCache();
+    window.addEventListener('resize', buildSectionCache, { passive: true });
+
     function updateActiveLink() {
-        const sections = document.querySelectorAll('section[id]');
         const scrollY = window.pageYOffset;
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight;
+        const isNearBottom = (scrollY + windowHeight) >= (documentHeight - 100);
 
         let activeSection = null;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150; // Offset maior
-            const sectionBottom = sectionTop + section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            // Verifica se está na última seção (contato)
-            const isNearBottom = (scrollY + windowHeight) >= (documentHeight - 100);
-
-            if (sectionId === 'contato' && isNearBottom) {
-                activeSection = sectionId;
-            } else if (scrollY >= sectionTop && scrollY < sectionBottom) {
-                activeSection = sectionId;
+        for (const s of sectionCache) {
+            if (s.id === 'contato' && isNearBottom) {
+                activeSection = s.id;
+                break;
+            } else if (scrollY >= s.top && scrollY < s.bottom) {
+                activeSection = s.id;
             }
-        });
+        }
 
         // Atualiza os links
         navLinks.forEach(link => {
@@ -55,58 +75,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inicialização do Portfolio Swiper
-    if (typeof Swiper !== 'undefined') {
-        const portfolioSwiper = new Swiper(".portfolio-swiper", {
+    // ========== SWIPER: LAZY LOAD ==========
+    // Carrega o Swiper JS somente quando portfolio entra no viewport
+    // Retira o long task (~500ms) do caminho crítico do carregamento inicial
+    function initPortfolioSwiper() {
+        if (typeof Swiper === 'undefined') return;
+
+        new Swiper(".portfolio-swiper", {
             slidesPerView: 1,
             spaceBetween: 0,
             loop: true,
             speed: 800,
             effect: "slide",
             grabCursor: true,
-
-            // Paginação
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
-
-            // Autoplay
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
-                pauseOnMouseEnter: true, // Pausa automaticamente ao passar o mouse
+                pauseOnMouseEnter: true,
             },
-
-            // Pausa manual no hover (reforço além do pauseOnMouseEnter)
             on: {
-                mouseenter: function () {
-                    this.autoplay.stop();
-                },
-                mouseleave: function () {
-                    this.autoplay.start();
-                }
+                mouseenter: function () { this.autoplay.stop(); },
+                mouseleave: function () { this.autoplay.start(); }
             }
         });
+
+        // Screenshots swiper (pages de case study)
+        if (document.querySelector('.screenshots-swiper')) {
+            new Swiper('.screenshots-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop: false,
+                speed: 600,
+                grabCursor: true,
+                pagination: {
+                    el: '.screenshots-swiper-container .swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: false,
+                },
+            });
+        }
     }
 
-    // ========== SWIPER SCREENSHOTS (CASE STUDY) ==========
-    if (document.querySelector('.screenshots-swiper')) {
-        const screenshotsSwiper = new Swiper('.screenshots-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            centeredSlides: true,
-            loop: false,
-            speed: 600,
-            grabCursor: true,
-
-            pagination: {
-                el: '.screenshots-swiper-container .swiper-pagination', // Seletor específico para não conflitar com outros swipers da página
-                clickable: true,
-                dynamicBullets: false,
-            },
-        });
-
+    const portfolioSection = document.querySelector('.portfolio-section');
+    if (portfolioSection) {
+        // index.html: carrega Swiper JS dinamicamente quando portfolio entra no viewport
+        const swiperLoader = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                swiperLoader.disconnect();
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+                script.onload = initPortfolioSwiper;
+                document.head.appendChild(script);
+            }
+        }, { rootMargin: '400px' });
+        swiperLoader.observe(portfolioSection);
+    } else if (typeof Swiper !== 'undefined') {
+        // Pages de case study (quitinete, semed etc.): Swiper já carregado via <script>
+        initPortfolioSwiper();
     }
     // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -123,6 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth',
                     block: 'start'
                 });
+
+                // Mantém URL limpa sem o #ancora
+                history.replaceState(null, '', window.location.pathname);
 
                 // Fecha menu mobile se estiver aberto
                 if (mobileMenu.classList.contains('active')) {
@@ -164,6 +197,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyrightYear = document.querySelector('.copyright-year');
     if (copyrightYear) {
         copyrightYear.textContent = new Date().getFullYear();
+    }
+
+    // ========== CROSS-PAGE SCROLL (sessionStorage) ==========
+    // Links de outras páginas (ex: contato.html → index.html#servicos) interceptados
+    // aqui: guarda o destino no sessionStorage e navega SEM hash → URL sempre limpa.
+    document.querySelectorAll('a[href*="index.html#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const hash = this.getAttribute('href').split('#')[1];
+            sessionStorage.setItem('scrollTarget', hash);
+            window.location.href = 'index.html';
+        });
+    });
+
+    // Ao carregar o index: rola para a seção guardada no sessionStorage
+    const pendingScrollTarget = sessionStorage.getItem('scrollTarget');
+    if (pendingScrollTarget) {
+        sessionStorage.removeItem('scrollTarget');
+        const targetEl = document.getElementById(pendingScrollTarget);
+        if (targetEl) {
+            setTimeout(() => {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
     }
 
     // ========== SCROLL ANIMATIONS ==========
@@ -261,32 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
-    // ========== OTIMIZAÇÃO DO VÍDEO DO HERO ==========
-    const heroVideo = document.querySelector('.hero-video');
-
-    if (heroVideo) {
-        // Pausa o vídeo quando sai da viewport (economia de CPU/bateria)
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroVideo.play();
-                } else {
-                    heroVideo.pause();
-                }
-            });
-        });
-
-        videoObserver.observe(heroVideo);
-
-        // Oculta o vídeo em conexões lentas (2G) para não prejudicar o carregamento
-        if ('connection' in navigator) {
-            const connection = navigator.connection;
-            if (connection.effectiveType === '2g' || connection.effectiveType === 'slow-2g') {
-                heroVideo.style.display = 'none';
-            }
-        }
-    }
-
     // ========== BOTÃO VOLTAR AO TOPO ==========
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
 
@@ -300,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTopBtn.style.opacity = '0';
                 scrollTopBtn.style.pointerEvents = 'none';
             }
-        });
+        }, { passive: true });
     }
 
     // ========== CARREGAMENTO PROGRESSIVO DE IMAGENS ==========

@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mensagens de erro personalizadas
   const errorMessages = {
     valueMissing:    'Campo de preenchimento obrigatório.',
-    typeMismatch:    'Por favor, insira um valor válido.',
     tooShort:        'O texto é muito curto.',
     patternMismatch: 'Por favor, siga o formato solicitado.'
   };
@@ -256,7 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pega mensagem de erro apropriada
   function getErrorMessage(input) {
     if (input.validity.valueMissing)    return errorMessages.valueMissing;
-    if (input.validity.typeMismatch)    return errorMessages.typeMismatch;
+    if (input.validity.typeMismatch) {
+      if (input.type === 'email') return 'Insira um e-mail válido. Ex: nome@exemplo.com';
+      if (input.type === 'url')   return 'Insira uma URL válida. Ex: https://site.com';
+      return 'Por favor, verifique este campo.';
+    }
     if (input.validity.tooShort)        return errorMessages.tooShort;
     if (input.validity.patternMismatch) {
       if (input.id === 'inputWhatsapp') return 'Informe um número válido: (DDD) 9 9999-9999';
