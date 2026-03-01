@@ -22,7 +22,7 @@
 
 **✦ Transformando ideias em experiências digitais**
 
-[![Ver site ao vivo →](https://img.shields.io/badge/Ver_site_ao_vivo_→-15161C?style=for-the-badge&logo=googlechrome&logoColor=F11348)](https://micheldouglas.dev)
+[![Ver site →](https://img.shields.io/badge/Ver_site_ao_vivo_→-15161C?style=for-the-badge&logo=googlechrome&logoColor=F11348)](https://micheldouglas.dev)
 
 </div>
 
