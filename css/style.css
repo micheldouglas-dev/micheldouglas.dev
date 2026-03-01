@@ -208,6 +208,9 @@ button {
     border-radius: var(--radius-md);
     white-space: nowrap;
     position: relative;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-link::before {
@@ -1409,6 +1412,8 @@ button {
     justify-content: center;
     text-decoration: none;
     transition: all var(--transition-base);
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .social-links a:hover {

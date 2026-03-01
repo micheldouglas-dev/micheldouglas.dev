@@ -415,7 +415,21 @@
 }
 
 @media (max-width: 480px) {
+    .portfolio-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: var(--space-2);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .portfolio-filters::-webkit-scrollbar {
+        display: none;
+    }
+
     .filter-btn {
+        flex-shrink: 0;
         padding: var(--space-2) var(--space-4);
         font-size: var(--text-xs);
     }
