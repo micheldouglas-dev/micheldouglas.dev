@@ -1,0 +1,140 @@
+# ==========================================
+# .htaccess - MichelDouglas.dev
+# Cache, compressão e segurança
+# ==========================================
+
+# ========== SECURITY HEADERS ==========
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.emailjs.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com;"
+
+    # Cache-Control por tipo de arquivo
+    <FilesMatch "\.(css|js|webp|png|jpg|jpeg|gif|svg|ico|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ========== BLOCK SENSITIVE FILES ==========
+<FilesMatch "(\.env|\.git|\.htpasswd|\.htaccess|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|webpack\.config\.js)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ========== BLOCK BACKUP/ARCHIVE HUNTERS ==========
+<FilesMatch "\.(bak|backup|old|orig|sql|dump|tar|gz|zip|rar|7z|tgz)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ========== BLOCK PHP/SCRIPT EXECUTION (static site) ==========
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ========== DISABLE DIRECTORY LISTING ==========
+Options -Indexes
+
+# ========== BLOCK KNOWN ATTACKER IPs ==========
+<IfModule mod_authz_core.c>
+    <RequireAll>
+        Require all granted
+        # França - SQL Injection
+        Require not ip 2a02:c207:2282:2578::1
+        # Peru - Admin Scan
+        Require not ip 45.202.1.22
+        # Andorra - Backup Hunter subnet
+        Require not ip 98.159.226.0/24
+        # EUA - .env theft
+        Require not ip 72.60.39.202
+        # EUA - .git exposure
+        Require not ip 136.117.71.110
+    </RequireAll>
+</IfModule>
+
+# ========== REWRITE RULES ==========
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect: remove /index.html da URL
+    RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
+    RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+    # Block WordPress scans
+    RewriteRule ^wp-(login|admin|config|includes|content) - [F,L]
+    RewriteRule ^xmlrpc\.php - [F,L]
+
+    # Block common admin paths
+    RewriteRule ^(admin|administrator|phpmyadmin|pma|cpanel|webmail|panel) - [F,L]
+
+    # Block SQL injection patterns in query strings
+    RewriteCond %{QUERY_STRING} (union|select|insert|drop|delete|update|cast|char|declare|exec|benchmark|sleep) [NC]
+    RewriteRule .* - [F,L]
+
+    # Block null bytes
+    RewriteCond %{QUERY_STRING} \\0 [NC]
+    RewriteRule .* - [F,L]
+</IfModule>
+
+# ========== CACHE DE LONGA DURAÇÃO ==========
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML: sem cache (sempre busca versão nova)
+    ExpiresByType text/html                  "access plus 0 seconds"
+
+    # CSS e JS: 1 ano
+    ExpiresByType text/css                   "access plus 1 year"
+    ExpiresByType application/javascript     "access plus 1 year"
+    ExpiresByType text/javascript            "access plus 1 year"
+
+    # Imagens: 1 ano
+    ExpiresByType image/webp                 "access plus 1 year"
+    ExpiresByType image/png                  "access plus 1 year"
+    ExpiresByType image/jpeg                 "access plus 1 year"
+    ExpiresByType image/jpg                  "access plus 1 year"
+    ExpiresByType image/gif                  "access plus 1 year"
+    ExpiresByType image/svg+xml              "access plus 1 year"
+    ExpiresByType image/x-icon              "access plus 1 year"
+    ExpiresByType image/ico                  "access plus 1 year"
+
+    # Fontes: 1 ano
+    ExpiresByType font/woff2                 "access plus 1 year"
+    ExpiresByType font/woff                  "access plus 1 year"
+    ExpiresByType application/font-woff2     "access plus 1 year"
+    ExpiresByType application/font-woff      "access plus 1 year"
+</IfModule>
+
+# ========== COMPRESSÃO GZIP ==========
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE font/woff
+</IfModule>

@@ -84,7 +84,6 @@ coverage/
 docs/generated/
 
 # ========== OUTROS ==========
-.htaccess
 robots.txt
 sitemap.xml
 
