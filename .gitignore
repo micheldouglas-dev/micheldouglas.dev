@@ -84,8 +84,6 @@ coverage/
 docs/generated/
 
 # ========== OUTROS ==========
-robots.txt
-sitemap.xml
 
 # ========== ESPECÍFICO DO PROJETO ==========
 # Credenciais SMTP — NUNCA versionar este arquivo

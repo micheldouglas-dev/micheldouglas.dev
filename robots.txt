@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /sucesso.html
+
+Sitemap: https://micheldouglas.dev/sitemap.xml
