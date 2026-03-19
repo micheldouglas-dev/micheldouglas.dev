@@ -1459,6 +1459,10 @@ button {
     font-weight: var(--font-bold);
 }
 
+.copyright-separator {
+    margin: 0 var(--space-1);
+}
+
 .footer-logo img {
     height: auto;
     width: 36px;
