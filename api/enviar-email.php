@@ -127,6 +127,44 @@ if (empty($servicos)) {
     sendResponse(false, 'Selecione pelo menos um serviço.', 400);
 }
 
+// ========== ANTI-SPAM FILTERS ==========
+
+// Honeypot: campo invisível que bots preenchem
+$honeypot = trim($_POST['website'] ?? '');
+if (!empty($honeypot)) {
+    sendResponse(false, 'Erro ao processar formulário.', 400);
+}
+
+// Bloqueia mensagens com URLs/links (spam comum)
+if (preg_match('/(https?:\/\/|www\.|\.com\/|\.net\/|\.org\/|bit\.ly|tinyurl)/i', $descricao)) {
+    sendResponse(false, 'Links não são permitidos na mensagem. Remova URLs e tente novamente.', 400);
+}
+
+// Bloqueia caracteres não-latinos em excesso (spam estrangeiro: cirílico, chinês, árabe, etc.)
+$nonLatinCount = preg_match_all('/[\x{0400}-\x{04FF}\x{4E00}-\x{9FFF}\x{0600}-\x{06FF}\x{0E00}-\x{0E7F}\x{3040}-\x{309F}\x{30A0}-\x{30FF}]/u', $descricao);
+if ($nonLatinCount > 3) {
+    sendResponse(false, 'Mensagem contém caracteres não suportados.', 400);
+}
+
+// Blocklist de palavras spam comuns
+$spamWords = ['viagra', 'casino', 'lottery', 'bitcoin', 'crypto', 'investment opportunity',
+              'click here', 'buy now', 'free money', 'congratulations you won', 'dear friend',
+              'nigerian', 'prince', 'inheritance', 'million dollars', 'urgent business',
+              'seo services', 'web traffic', 'backlinks', 'guest post', 'link building'];
+$textoLower = mb_strtolower($nome . ' ' . $descricao, 'UTF-8');
+foreach ($spamWords as $word) {
+    if (str_contains($textoLower, $word)) {
+        sendResponse(false, 'Mensagem detectada como spam.', 400);
+    }
+}
+
+// Bloqueia se nome contiver apenas caracteres não-portugueses
+if (preg_match_all('/[a-zA-ZÀ-ÿ\s]/u', $nome) < (mb_strlen($nome, 'UTF-8') * 0.7)) {
+    sendResponse(false, 'Nome inválido.', 400);
+}
+
+// ========== FIM ANTI-SPAM ==========
+
 // Valida CAPTCHA via sessão (server-side)
 if (
     !isset($_SESSION['captcha_answer'], $_SESSION['captcha_time']) ||

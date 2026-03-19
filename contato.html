@@ -226,6 +226,12 @@
                         </select>
                     </div>
 
+                    <!-- Honeypot anti-spam (invisível para humanos) -->
+                    <div class="form-field" style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                        <label for="inputWebsite">Website</label>
+                        <input type="text" id="inputWebsite" name="website" autocomplete="off" tabindex="-1">
+                    </div>
+
                     <!-- CAPTCHA -->
                     <div class="form-field form-field-captcha">
                         <label for="inputCaptcha" class="form-label required">
