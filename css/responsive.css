@@ -951,9 +951,11 @@
     }
 
     .copyright-separator {
+        display: none;
+    }
+
+    .copyright-rights {
         display: block;
-        font-size: 0;
-        height: 2px;
     }
 
     .footer .container {
