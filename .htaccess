@@ -44,7 +44,7 @@
 </FilesMatch>
 
 # ========== BLOCK PHP/SCRIPT EXECUTION (static site) ==========
-<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh)$">
+<FilesMatch "\.(php3|php4|php5|phtml|pl|py|cgi|sh)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
