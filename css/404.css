@@ -1,0 +1,91 @@
+/* ========================================
+   404.CSS - MichelDouglas.dev
+   ======================================== */
+
+
+/* ========== ERROR HERO ========== */
+.error-hero {
+    background: var(--bg-primary);
+    padding: calc(var(--header-height) + var(--space-20)) 0 var(--space-20);
+    position: relative;
+    overflow: hidden;
+}
+
+.error-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-code {
+    font-size: clamp(7rem, 20vw, 12rem);
+    font-weight: var(--font-extrabold);
+    line-height: 1;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
+}
+
+.error-label {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--primary-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+}
+
+.error-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-white);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+}
+
+.error-text {
+    font-size: var(--text-base);
+    color: var(--text-gray);
+    line-height: var(--leading-relaxed);
+}
+
+
+/* ========== ERROR INFO ========== */
+.error-info {
+    padding: var(--space-36) 0;
+    background: var(--bg-white);
+    position: relative;
+    overflow-x: clip;
+}
+
+.error-info .container {
+    position: relative;
+}
+
+.error-info-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-info h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    margin-bottom: var(--space-4);
+}
+
+.error-info p {
+    font-size: var(--text-base);
+    color: var(--text-gray-dark);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+.error-info-content .contact-btn {
+    margin: 0 auto;
+}
