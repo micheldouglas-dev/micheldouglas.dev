@@ -74,6 +74,9 @@ Options -Indexes
     </RequireAll>
 </IfModule>
 
+# ========== CUSTOM ERROR PAGES ==========
+ErrorDocument 404 /404.html
+
 # ========== REWRITE RULES ==========
 <IfModule mod_rewrite.c>
     RewriteEngine On
